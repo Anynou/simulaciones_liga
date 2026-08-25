@@ -3,53 +3,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>La Liga 2026 – Predicciones</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>La Liga 2026 – Predictions</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
+      padding: 30px;
       background-color: #f5f7fa;
       color: #222;
     }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
     h1, h2 {
       text-align: center;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .section {
+      margin-top: 40px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
       margin-top: 20px;
       background-color: #fff;
     }
+
     th, td {
       border: 1px solid #ddd;
-      padding: 6px;
+      padding: 7px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
+
     th {
       background-color: #1f4f7b;
       color: white;
+      position: sticky;
+      top: 0;
     }
+
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+
     img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 20px auto;
     }
-    .section {
-      margin-top: 40px;
-    }
-    select {
-      padding: 6px;
-      margin-left: 10px;
-    }
+
     .filters {
       margin-bottom: 10px;
       display: flex;
@@ -57,202 +73,66 @@
       align-items: center;
       flex-wrap: wrap;
     }
+
     .filters > div {
       display: flex;
       align-items: center;
       gap: 8px;
     }
+
+    select {
+      padding: 7px;
+      min-width: 180px;
+    }
+
+    .table-wrapper {
+      max-height: 750px;
+      overflow: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 7px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .legend {
+      text-align: center;
+      margin: 10px 0;
+      color: #555;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h1>La Liga 2026 – Predicción</h1>
+
+    <h1>La Liga 2026 – Predictions</h1>
 
     <div class="section">
-      <h2>Tabla final proyectada</h2>
-      <img src="laliga_points_mean.png" alt="Puntos esperados por equipo">
-      <p>Zonas: 1–4 Champions, 5–6 Europa, últimos 3 descenso.</p>
-      <table border="1" class="dataframe" id="table_final">
-  <thead>
-    <tr style="text-align: right;">
-      <th>position</th>
-      <th>team</th>
-      <th>points_mean</th>
-      <th>points_p05</th>
-      <th>points_p95</th>
-      <th>zone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Real Madrid</td>
-      <td>86.94</td>
-      <td>76.58</td>
-      <td>96.43</td>
-      <td>Champions</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Atlético Madrid</td>
-      <td>70.57</td>
-      <td>58.61</td>
-      <td>82.25</td>
-      <td>Champions</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Villarreal</td>
-      <td>60.49</td>
-      <td>48.21</td>
-      <td>72.79</td>
-      <td>Champions</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Real Betis</td>
-      <td>58.27</td>
-      <td>46.32</td>
-      <td>70.90</td>
-      <td>Champions</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Real Sociedad</td>
-      <td>50.14</td>
-      <td>37.82</td>
-      <td>62.39</td>
-      <td>Europa</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Celta Vigo</td>
-      <td>47.77</td>
-      <td>35.92</td>
-      <td>60.50</td>
-      <td>Europa</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Rayo Vallecano</td>
-      <td>47.59</td>
-      <td>34.98</td>
-      <td>60.50</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Deportivo de A Coruña</td>
-      <td>46.00</td>
-      <td>34.03</td>
-      <td>58.61</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Barcelona</td>
-      <td>45.90</td>
-      <td>34.03</td>
-      <td>58.61</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Málaga</td>
-      <td>45.90</td>
-      <td>34.03</td>
-      <td>57.67</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>Levante</td>
-      <td>45.86</td>
-      <td>34.03</td>
-      <td>58.61</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Racing de Santander</td>
-      <td>45.85</td>
-      <td>34.03</td>
-      <td>57.67</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Athletic Bilbao</td>
-      <td>45.78</td>
-      <td>34.03</td>
-      <td>57.67</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>Sevilla</td>
-      <td>45.45</td>
-      <td>33.09</td>
-      <td>57.67</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>Elche</td>
-      <td>44.62</td>
-      <td>33.09</td>
-      <td>56.72</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>Getafe</td>
-      <td>44.46</td>
-      <td>32.14</td>
-      <td>56.72</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>Valencia</td>
-      <td>43.81</td>
-      <td>31.20</td>
-      <td>55.82</td>
-      <td>Media tabla</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>Osasuna</td>
-      <td>43.63</td>
-      <td>32.14</td>
-      <td>55.78</td>
-      <td>Descenso</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>Deportivo Alavés</td>
-      <td>41.33</td>
-      <td>29.31</td>
-      <td>53.89</td>
-      <td>Descenso</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>Espanyol</td>
-      <td>39.62</td>
-      <td>27.42</td>
-      <td>51.05</td>
-      <td>Descenso</td>
-    </tr>
-  </tbody>
-</table>
+      <h2>Clasificación esperada</h2>
+
+      <p class="legend">
+        Promotion: posiciones 1–2 |
+        Playoffs: posiciones 3–6 |
+        Relegation: últimas 3
+      </p>
+
+      <img
+        src="la_liga_points_mean.png"
+        alt="Expected points by team"
+      >
+
     </div>
 
     <div class="section">
-      <h2>Resultados predichos por jornada y equipo</h2>
+      <h2>Predicciones de partidos</h2>
+
       <div class="filters">
         <div>
           <label for="mdSelect">Jornada:</label>
+
           <select id="mdSelect">
             <option value="all">Todas</option>
             <option value="1">Jornada 1</option>
@@ -295,26 +175,28 @@
 <option value="38">Jornada 38</option>
           </select>
         </div>
+
         <div>
           <label for="teamSelect">Equipo:</label>
+
           <select id="teamSelect">
             <option value="all">Todos</option>
-            <option value="Athletic Bilbao">Athletic Bilbao</option>
+            <option value="Athletic Club">Athletic Club</option>
 <option value="Atlético Madrid">Atlético Madrid</option>
-<option value="Barcelona">Barcelona</option>
 <option value="Celta Vigo">Celta Vigo</option>
 <option value="Deportivo Alavés">Deportivo Alavés</option>
 <option value="Deportivo de A Coruña">Deportivo de A Coruña</option>
 <option value="Elche">Elche</option>
 <option value="Espanyol">Espanyol</option>
+<option value="FC Barcelona">FC Barcelona</option>
 <option value="Getafe">Getafe</option>
-<option value="Levante">Levante</option>
-<option value="Málaga">Málaga</option>
+<option value="Levante UD">Levante UD</option>
+<option value="Málaga CF">Málaga CF</option>
 <option value="Osasuna">Osasuna</option>
-<option value="Racing de Santander">Racing de Santander</option>
 <option value="Rayo Vallecano">Rayo Vallecano</option>
 <option value="Real Betis">Real Betis</option>
 <option value="Real Madrid">Real Madrid</option>
+<option value="Real Racing Club">Real Racing Club</option>
 <option value="Real Sociedad">Real Sociedad</option>
 <option value="Sevilla">Sevilla</option>
 <option value="Valencia">Valencia</option>
@@ -322,8 +204,14 @@
           </select>
         </div>
       </div>
-      <p>Filtra la tabla por jornada y/o por equipo (como local o visitante).</p>
-      <table border="1" class="dataframe" id="match_table">
+
+      <p>
+        Las probabilidades se calculan agrupando los resultados
+        de todas las simulaciones Monte Carlo.
+      </p>
+
+      <div class="table-wrapper">
+        <table border="1" class="dataframe data-table" id="match_table">
   <thead>
     <tr style="text-align: right;">
       <th>season</th>
@@ -334,6 +222,8 @@
       <th>prob_draw</th>
       <th>prob_away_win</th>
       <th>predicted_result</th>
+      <th>mean_home_goals</th>
+      <th>mean_away_goals</th>
     </tr>
   </thead>
   <tbody>
@@ -341,3811 +231,4575 @@
       <td>2026</td>
       <td>1</td>
       <td>Atlético Madrid</td>
-      <td>Málaga</td>
-      <td>0.691</td>
-      <td>0.176</td>
-      <td>0.133</td>
+      <td>Málaga CF</td>
+      <td>50.6%</td>
+      <td>25.4%</td>
+      <td>24.0%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>1</td>
-      <td>Barcelona</td>
-      <td>Athletic Bilbao</td>
-      <td>0.458</td>
-      <td>0.233</td>
-      <td>0.309</td>
-      <td>H</td>
+      <td>1.54</td>
+      <td>0.99</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Celta Vigo</td>
       <td>Osasuna</td>
-      <td>0.487</td>
-      <td>0.234</td>
-      <td>0.278</td>
+      <td>36.8%</td>
+      <td>32.0%</td>
+      <td>31.2%</td>
       <td>H</td>
+      <td>1.00</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Deportivo Alavés</td>
       <td>Getafe</td>
-      <td>0.432</td>
-      <td>0.235</td>
-      <td>0.333</td>
-      <td>D</td>
+      <td>48.5%</td>
+      <td>27.8%</td>
+      <td>23.7%</td>
+      <td>H</td>
+      <td>1.37</td>
+      <td>0.88</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Deportivo de A Coruña</td>
       <td>Elche</td>
-      <td>0.475</td>
-      <td>0.230</td>
-      <td>0.294</td>
+      <td>48.8%</td>
+      <td>24.8%</td>
+      <td>26.4%</td>
       <td>H</td>
+      <td>1.57</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Espanyol</td>
-      <td>Levante</td>
-      <td>0.402</td>
-      <td>0.233</td>
-      <td>0.364</td>
-      <td>D</td>
+      <td>Levante UD</td>
+      <td>44.8%</td>
+      <td>25.7%</td>
+      <td>29.5%</td>
+      <td>H</td>
+      <td>1.42</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
-      <td>Racing de Santander</td>
-      <td>Villarreal</td>
-      <td>0.335</td>
-      <td>0.230</td>
-      <td>0.435</td>
-      <td>D</td>
+      <td>FC Barcelona</td>
+      <td>Athletic Club</td>
+      <td>56.4%</td>
+      <td>23.3%</td>
+      <td>20.3%</td>
+      <td>H</td>
+      <td>1.79</td>
+      <td>0.97</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Real Madrid</td>
       <td>Real Sociedad</td>
-      <td>0.804</td>
-      <td>0.124</td>
-      <td>0.071</td>
+      <td>52.6%</td>
+      <td>25.4%</td>
+      <td>22.1%</td>
       <td>H</td>
+      <td>1.58</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>1</td>
+      <td>Real Racing Club</td>
+      <td>Villarreal</td>
+      <td>39.6%</td>
+      <td>24.0%</td>
+      <td>36.3%</td>
+      <td>H</td>
+      <td>1.52</td>
+      <td>1.44</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Sevilla</td>
       <td>Rayo Vallecano</td>
-      <td>0.442</td>
-      <td>0.232</td>
-      <td>0.326</td>
+      <td>44.2%</td>
+      <td>26.1%</td>
+      <td>29.7%</td>
       <td>H</td>
+      <td>1.46</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>1</td>
       <td>Valencia</td>
       <td>Real Betis</td>
-      <td>0.321</td>
-      <td>0.234</td>
-      <td>0.445</td>
+      <td>31.8%</td>
+      <td>30.1%</td>
+      <td>38.2%</td>
       <td>A</td>
+      <td>0.94</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Sevilla</td>
-      <td>0.460</td>
-      <td>0.225</td>
-      <td>0.315</td>
-      <td>H</td>
+      <td>36.0%</td>
+      <td>25.7%</td>
+      <td>38.3%</td>
+      <td>A</td>
+      <td>1.34</td>
+      <td>1.41</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Atlético Madrid</td>
       <td>Villarreal</td>
-      <td>0.563</td>
-      <td>0.210</td>
-      <td>0.227</td>
+      <td>48.0%</td>
+      <td>24.0%</td>
+      <td>28.0%</td>
       <td>H</td>
+      <td>1.72</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Elche</td>
-      <td>Barcelona</td>
-      <td>0.443</td>
-      <td>0.232</td>
-      <td>0.326</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>17.9%</td>
+      <td>21.2%</td>
+      <td>60.9%</td>
+      <td>A</td>
+      <td>0.93</td>
+      <td>1.94</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Espanyol</td>
       <td>Real Madrid</td>
-      <td>0.093</td>
-      <td>0.140</td>
-      <td>0.767</td>
+      <td>27.3%</td>
+      <td>26.1%</td>
+      <td>46.6%</td>
       <td>A</td>
+      <td>1.10</td>
+      <td>1.52</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Getafe</td>
-      <td>Racing de Santander</td>
-      <td>0.449</td>
-      <td>0.237</td>
-      <td>0.314</td>
-      <td>H</td>
+      <td>Real Racing Club</td>
+      <td>33.8%</td>
+      <td>27.1%</td>
+      <td>39.2%</td>
+      <td>A</td>
+      <td>1.16</td>
+      <td>1.27</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.455</td>
-      <td>0.240</td>
-      <td>0.305</td>
-      <td>H</td>
+      <td>36.1%</td>
+      <td>27.8%</td>
+      <td>36.1%</td>
+      <td>A</td>
+      <td>1.17</td>
+      <td>1.17</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Osasuna</td>
-      <td>Levante</td>
-      <td>0.441</td>
-      <td>0.235</td>
-      <td>0.325</td>
+      <td>Levante UD</td>
+      <td>42.8%</td>
+      <td>29.1%</td>
+      <td>28.1%</td>
       <td>H</td>
+      <td>1.24</td>
+      <td>0.95</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Rayo Vallecano</td>
       <td>Deportivo Alavés</td>
-      <td>0.523</td>
-      <td>0.226</td>
-      <td>0.252</td>
-      <td>H</td>
+      <td>29.5%</td>
+      <td>27.0%</td>
+      <td>43.5%</td>
+      <td>A</td>
+      <td>1.05</td>
+      <td>1.34</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Real Betis</td>
       <td>Real Sociedad</td>
-      <td>0.536</td>
-      <td>0.217</td>
-      <td>0.246</td>
+      <td>47.4%</td>
+      <td>27.3%</td>
+      <td>25.3%</td>
       <td>H</td>
+      <td>1.36</td>
+      <td>0.91</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>2</td>
       <td>Valencia</td>
       <td>Celta Vigo</td>
-      <td>0.419</td>
-      <td>0.240</td>
-      <td>0.341</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>3</td>
-      <td>Barcelona</td>
-      <td>Rayo Vallecano</td>
-      <td>0.444</td>
-      <td>0.229</td>
-      <td>0.327</td>
+      <td>35.8%</td>
+      <td>32.1%</td>
+      <td>32.1%</td>
       <td>H</td>
+      <td>0.96</td>
+      <td>0.89</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Celta Vigo</td>
-      <td>Athletic Bilbao</td>
-      <td>0.473</td>
-      <td>0.232</td>
-      <td>0.294</td>
+      <td>Athletic Club</td>
+      <td>42.8%</td>
+      <td>28.4%</td>
+      <td>28.9%</td>
       <td>H</td>
+      <td>1.30</td>
+      <td>1.02</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Deportivo Alavés</td>
       <td>Villarreal</td>
-      <td>0.286</td>
-      <td>0.229</td>
-      <td>0.485</td>
-      <td>A</td>
+      <td>45.0%</td>
+      <td>24.9%</td>
+      <td>30.1%</td>
+      <td>H</td>
+      <td>1.54</td>
+      <td>1.20</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Deportivo de A Coruña</td>
       <td>Valencia</td>
-      <td>0.484</td>
-      <td>0.220</td>
-      <td>0.296</td>
+      <td>35.7%</td>
+      <td>30.5%</td>
+      <td>33.8%</td>
       <td>H</td>
+      <td>1.04</td>
+      <td>1.00</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
-      <td>Levante</td>
+      <td>FC Barcelona</td>
+      <td>Rayo Vallecano</td>
+      <td>57.1%</td>
+      <td>23.5%</td>
+      <td>19.4%</td>
+      <td>H</td>
+      <td>1.73</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>3</td>
+      <td>Levante UD</td>
       <td>Real Betis</td>
-      <td>0.345</td>
-      <td>0.234</td>
-      <td>0.422</td>
-      <td>D</td>
+      <td>25.9%</td>
+      <td>27.1%</td>
+      <td>47.0%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.38</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Osasuna</td>
       <td>Getafe</td>
-      <td>0.453</td>
-      <td>0.230</td>
-      <td>0.318</td>
+      <td>42.4%</td>
+      <td>30.2%</td>
+      <td>27.5%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>3</td>
-      <td>Racing de Santander</td>
-      <td>Elche</td>
-      <td>0.471</td>
-      <td>0.229</td>
-      <td>0.300</td>
-      <td>H</td>
+      <td>1.17</td>
+      <td>0.88</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Real Madrid</td>
-      <td>Málaga</td>
-      <td>0.839</td>
-      <td>0.103</td>
-      <td>0.058</td>
+      <td>Málaga CF</td>
+      <td>55.2%</td>
+      <td>24.5%</td>
+      <td>20.2%</td>
       <td>H</td>
+      <td>1.69</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>3</td>
+      <td>Real Racing Club</td>
+      <td>Elche</td>
+      <td>52.0%</td>
+      <td>23.5%</td>
+      <td>24.5%</td>
+      <td>H</td>
+      <td>1.77</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Real Sociedad</td>
       <td>Espanyol</td>
-      <td>0.560</td>
-      <td>0.217</td>
-      <td>0.223</td>
-      <td>H</td>
+      <td>36.1%</td>
+      <td>27.3%</td>
+      <td>36.6%</td>
+      <td>A</td>
+      <td>1.20</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>3</td>
       <td>Sevilla</td>
       <td>Atlético Madrid</td>
-      <td>0.235</td>
-      <td>0.218</td>
-      <td>0.547</td>
+      <td>31.7%</td>
+      <td>26.0%</td>
+      <td>42.3%</td>
       <td>A</td>
+      <td>1.21</td>
+      <td>1.43</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Atlético Madrid</td>
-      <td>0.242</td>
-      <td>0.215</td>
-      <td>0.543</td>
+      <td>28.1%</td>
+      <td>24.3%</td>
+      <td>47.5%</td>
       <td>A</td>
+      <td>1.17</td>
+      <td>1.60</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Deportivo Alavés</td>
       <td>Osasuna</td>
-      <td>0.431</td>
-      <td>0.237</td>
-      <td>0.332</td>
-      <td>D</td>
+      <td>41.1%</td>
+      <td>30.2%</td>
+      <td>28.7%</td>
+      <td>H</td>
+      <td>1.18</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Elche</td>
       <td>Real Sociedad</td>
-      <td>0.410</td>
-      <td>0.235</td>
-      <td>0.355</td>
-      <td>D</td>
+      <td>31.8%</td>
+      <td>26.2%</td>
+      <td>42.0%</td>
+      <td>A</td>
+      <td>1.19</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Espanyol</td>
       <td>Sevilla</td>
-      <td>0.396</td>
-      <td>0.241</td>
-      <td>0.363</td>
-      <td>D</td>
+      <td>38.4%</td>
+      <td>26.2%</td>
+      <td>35.4%</td>
+      <td>H</td>
+      <td>1.35</td>
+      <td>1.29</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Getafe</td>
       <td>Celta Vigo</td>
-      <td>0.422</td>
-      <td>0.234</td>
-      <td>0.344</td>
-      <td>D</td>
+      <td>31.3%</td>
+      <td>30.1%</td>
+      <td>38.6%</td>
+      <td>A</td>
+      <td>0.94</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
-      <td>Málaga</td>
-      <td>Levante</td>
-      <td>0.457</td>
-      <td>0.230</td>
-      <td>0.313</td>
+      <td>Málaga CF</td>
+      <td>Levante UD</td>
+      <td>41.5%</td>
+      <td>27.4%</td>
+      <td>31.1%</td>
       <td>H</td>
+      <td>1.30</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Rayo Vallecano</td>
-      <td>Racing de Santander</td>
-      <td>0.470</td>
-      <td>0.235</td>
-      <td>0.295</td>
-      <td>H</td>
+      <td>Real Racing Club</td>
+      <td>34.0%</td>
+      <td>27.4%</td>
+      <td>38.7%</td>
+      <td>A</td>
+      <td>1.24</td>
+      <td>1.33</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Real Betis</td>
       <td>Real Madrid</td>
-      <td>0.185</td>
-      <td>0.204</td>
-      <td>0.612</td>
+      <td>33.6%</td>
+      <td>27.8%</td>
+      <td>38.6%</td>
       <td>A</td>
+      <td>1.13</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Valencia</td>
-      <td>Barcelona</td>
-      <td>0.444</td>
-      <td>0.233</td>
-      <td>0.323</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>26.4%</td>
+      <td>28.7%</td>
+      <td>45.0%</td>
+      <td>A</td>
+      <td>0.89</td>
+      <td>1.27</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>4</td>
       <td>Villarreal</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.598</td>
-      <td>0.207</td>
-      <td>0.195</td>
+      <td>41.2%</td>
+      <td>25.2%</td>
+      <td>33.6%</td>
       <td>H</td>
+      <td>1.47</td>
+      <td>1.30</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Elche</td>
-      <td>0.465</td>
-      <td>0.230</td>
-      <td>0.305</td>
+      <td>47.8%</td>
+      <td>24.7%</td>
+      <td>27.6%</td>
       <td>H</td>
+      <td>1.71</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Celta Vigo</td>
-      <td>Málaga</td>
-      <td>0.480</td>
-      <td>0.230</td>
-      <td>0.291</td>
+      <td>Málaga CF</td>
+      <td>41.2%</td>
+      <td>29.0%</td>
+      <td>29.8%</td>
       <td>H</td>
+      <td>1.16</td>
+      <td>0.94</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Getafe</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.443</td>
-      <td>0.232</td>
-      <td>0.325</td>
-      <td>H</td>
+      <td>33.3%</td>
+      <td>28.7%</td>
+      <td>38.0%</td>
+      <td>A</td>
+      <td>1.06</td>
+      <td>1.16</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
-      <td>Levante</td>
-      <td>Barcelona</td>
-      <td>0.454</td>
-      <td>0.240</td>
-      <td>0.306</td>
-      <td>H</td>
+      <td>Levante UD</td>
+      <td>FC Barcelona</td>
+      <td>22.0%</td>
+      <td>25.0%</td>
+      <td>53.0%</td>
+      <td>A</td>
+      <td>0.95</td>
+      <td>1.61</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Osasuna</td>
       <td>Espanyol</td>
-      <td>0.490</td>
-      <td>0.229</td>
-      <td>0.281</td>
+      <td>38.4%</td>
+      <td>28.2%</td>
+      <td>33.5%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>5</td>
-      <td>Racing de Santander</td>
-      <td>Deportivo Alavés</td>
-      <td>0.495</td>
-      <td>0.228</td>
-      <td>0.277</td>
-      <td>H</td>
+      <td>1.18</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Real Madrid</td>
       <td>Rayo Vallecano</td>
-      <td>0.832</td>
-      <td>0.112</td>
-      <td>0.056</td>
+      <td>56.7%</td>
+      <td>23.7%</td>
+      <td>19.6%</td>
       <td>H</td>
+      <td>1.73</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>5</td>
+      <td>Real Racing Club</td>
+      <td>Deportivo Alavés</td>
+      <td>33.0%</td>
+      <td>26.9%</td>
+      <td>40.1%</td>
+      <td>A</td>
+      <td>1.17</td>
+      <td>1.31</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Real Sociedad</td>
       <td>Atlético Madrid</td>
-      <td>0.275</td>
-      <td>0.224</td>
-      <td>0.501</td>
+      <td>28.9%</td>
+      <td>26.7%</td>
+      <td>44.3%</td>
       <td>A</td>
+      <td>1.07</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Sevilla</td>
       <td>Valencia</td>
-      <td>0.476</td>
-      <td>0.234</td>
-      <td>0.289</td>
+      <td>37.3%</td>
+      <td>28.9%</td>
+      <td>33.8%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>5</td>
       <td>Villarreal</td>
       <td>Real Betis</td>
-      <td>0.484</td>
-      <td>0.224</td>
-      <td>0.292</td>
-      <td>H</td>
+      <td>32.8%</td>
+      <td>25.5%</td>
+      <td>41.7%</td>
+      <td>A</td>
+      <td>1.25</td>
+      <td>1.43</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Atlético Madrid</td>
       <td>Osasuna</td>
-      <td>0.711</td>
-      <td>0.163</td>
-      <td>0.127</td>
+      <td>45.0%</td>
+      <td>27.4%</td>
+      <td>27.6%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>6</td>
-      <td>Barcelona</td>
-      <td>Racing de Santander</td>
-      <td>0.454</td>
-      <td>0.236</td>
-      <td>0.310</td>
-      <td>H</td>
+      <td>1.34</td>
+      <td>0.99</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Deportivo Alavés</td>
       <td>Valencia</td>
-      <td>0.435</td>
-      <td>0.237</td>
-      <td>0.328</td>
+      <td>41.1%</td>
+      <td>30.5%</td>
+      <td>28.3%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>0.88</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Deportivo de A Coruña</td>
       <td>Sevilla</td>
-      <td>0.465</td>
-      <td>0.234</td>
-      <td>0.301</td>
+      <td>37.1%</td>
+      <td>27.1%</td>
+      <td>35.8%</td>
       <td>H</td>
+      <td>1.27</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Elche</td>
       <td>Real Madrid</td>
-      <td>0.120</td>
-      <td>0.156</td>
-      <td>0.725</td>
+      <td>19.4%</td>
+      <td>22.0%</td>
+      <td>58.6%</td>
       <td>A</td>
+      <td>0.98</td>
+      <td>1.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
-      <td>Levante</td>
-      <td>Athletic Bilbao</td>
-      <td>0.461</td>
-      <td>0.240</td>
-      <td>0.299</td>
+      <td>FC Barcelona</td>
+      <td>Real Racing Club</td>
+      <td>54.3%</td>
+      <td>24.1%</td>
+      <td>21.6%</td>
       <td>H</td>
+      <td>1.69</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
-      <td>Málaga</td>
+      <td>Levante UD</td>
+      <td>Athletic Club</td>
+      <td>37.0%</td>
+      <td>26.2%</td>
+      <td>36.8%</td>
+      <td>H</td>
+      <td>1.31</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>6</td>
+      <td>Málaga CF</td>
       <td>Villarreal</td>
-      <td>0.325</td>
-      <td>0.234</td>
-      <td>0.442</td>
+      <td>34.8%</td>
+      <td>26.1%</td>
+      <td>39.1%</td>
       <td>A</td>
+      <td>1.35</td>
+      <td>1.44</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Rayo Vallecano</td>
       <td>Espanyol</td>
-      <td>0.536</td>
-      <td>0.223</td>
-      <td>0.241</td>
-      <td>H</td>
+      <td>34.5%</td>
+      <td>27.0%</td>
+      <td>38.5%</td>
+      <td>A</td>
+      <td>1.23</td>
+      <td>1.32</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Real Betis</td>
       <td>Getafe</td>
-      <td>0.597</td>
-      <td>0.199</td>
-      <td>0.204</td>
+      <td>49.0%</td>
+      <td>27.3%</td>
+      <td>23.6%</td>
       <td>H</td>
+      <td>1.36</td>
+      <td>0.85</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>6</td>
       <td>Real Sociedad</td>
       <td>Celta Vigo</td>
-      <td>0.477</td>
-      <td>0.234</td>
-      <td>0.290</td>
+      <td>35.1%</td>
+      <td>30.8%</td>
+      <td>34.2%</td>
       <td>H</td>
+      <td>1.01</td>
+      <td>1.02</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Deportivo Alavés</td>
-      <td>0.509</td>
-      <td>0.215</td>
-      <td>0.276</td>
-      <td>H</td>
+      <td>30.6%</td>
+      <td>26.3%</td>
+      <td>43.0%</td>
+      <td>A</td>
+      <td>1.15</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Atlético Madrid</td>
       <td>Real Madrid</td>
-      <td>0.285</td>
-      <td>0.221</td>
-      <td>0.494</td>
+      <td>35.8%</td>
+      <td>26.1%</td>
+      <td>38.1%</td>
       <td>A</td>
+      <td>1.28</td>
+      <td>1.33</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Celta Vigo</td>
-      <td>Racing de Santander</td>
-      <td>0.484</td>
-      <td>0.228</td>
-      <td>0.288</td>
+      <td>Real Racing Club</td>
+      <td>38.5%</td>
+      <td>28.6%</td>
+      <td>32.9%</td>
       <td>H</td>
+      <td>1.18</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Deportivo de A Coruña</td>
       <td>Real Betis</td>
-      <td>0.348</td>
-      <td>0.230</td>
-      <td>0.423</td>
-      <td>D</td>
+      <td>30.1%</td>
+      <td>28.7%</td>
+      <td>41.2%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Espanyol</td>
       <td>Elche</td>
-      <td>0.405</td>
-      <td>0.236</td>
-      <td>0.359</td>
-      <td>D</td>
+      <td>50.8%</td>
+      <td>24.2%</td>
+      <td>25.0%</td>
+      <td>H</td>
+      <td>1.70</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Getafe</td>
-      <td>Málaga</td>
-      <td>0.444</td>
-      <td>0.228</td>
-      <td>0.328</td>
-      <td>H</td>
+      <td>Málaga CF</td>
+      <td>35.1%</td>
+      <td>29.1%</td>
+      <td>35.8%</td>
+      <td>A</td>
+      <td>1.11</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Osasuna</td>
       <td>Rayo Vallecano</td>
-      <td>0.428</td>
-      <td>0.231</td>
-      <td>0.341</td>
-      <td>D</td>
+      <td>41.9%</td>
+      <td>28.1%</td>
+      <td>30.0%</td>
+      <td>H</td>
+      <td>1.24</td>
+      <td>1.00</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Sevilla</td>
-      <td>Barcelona</td>
-      <td>0.454</td>
-      <td>0.233</td>
-      <td>0.314</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>26.9%</td>
+      <td>25.1%</td>
+      <td>48.1%</td>
+      <td>A</td>
+      <td>1.08</td>
+      <td>1.53</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Valencia</td>
       <td>Real Sociedad</td>
-      <td>0.399</td>
-      <td>0.236</td>
-      <td>0.365</td>
-      <td>D</td>
+      <td>40.4%</td>
+      <td>29.5%</td>
+      <td>30.1%</td>
+      <td>H</td>
+      <td>1.12</td>
+      <td>0.91</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>7</td>
       <td>Villarreal</td>
-      <td>Levante</td>
-      <td>0.602</td>
-      <td>0.201</td>
-      <td>0.197</td>
+      <td>Levante UD</td>
+      <td>46.5%</td>
+      <td>24.5%</td>
+      <td>29.0%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>8</td>
-      <td>Barcelona</td>
-      <td>Getafe</td>
-      <td>0.476</td>
-      <td>0.234</td>
-      <td>0.289</td>
-      <td>H</td>
+      <td>1.62</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Deportivo Alavés</td>
       <td>Atlético Madrid</td>
-      <td>0.211</td>
-      <td>0.209</td>
-      <td>0.580</td>
+      <td>35.9%</td>
+      <td>27.1%</td>
+      <td>37.0%</td>
       <td>A</td>
+      <td>1.20</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Elche</td>
       <td>Celta Vigo</td>
-      <td>0.431</td>
-      <td>0.232</td>
-      <td>0.337</td>
-      <td>D</td>
+      <td>28.6%</td>
+      <td>26.9%</td>
+      <td>44.5%</td>
+      <td>A</td>
+      <td>1.03</td>
+      <td>1.36</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
-      <td>Levante</td>
+      <td>FC Barcelona</td>
+      <td>Getafe</td>
+      <td>56.8%</td>
+      <td>24.7%</td>
+      <td>18.5%</td>
+      <td>H</td>
+      <td>1.63</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>8</td>
+      <td>Levante UD</td>
       <td>Sevilla</td>
-      <td>0.473</td>
-      <td>0.229</td>
-      <td>0.298</td>
-      <td>H</td>
+      <td>32.4%</td>
+      <td>26.5%</td>
+      <td>41.1%</td>
+      <td>A</td>
+      <td>1.19</td>
+      <td>1.37</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Espanyol</td>
-      <td>0.523</td>
-      <td>0.217</td>
-      <td>0.260</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>8</td>
-      <td>Racing de Santander</td>
-      <td>Valencia</td>
-      <td>0.483</td>
-      <td>0.227</td>
-      <td>0.290</td>
-      <td>H</td>
+      <td>35.1%</td>
+      <td>27.3%</td>
+      <td>37.6%</td>
+      <td>A</td>
+      <td>1.21</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Rayo Vallecano</td>
-      <td>Athletic Bilbao</td>
-      <td>0.479</td>
-      <td>0.222</td>
-      <td>0.298</td>
+      <td>Athletic Club</td>
+      <td>37.3%</td>
+      <td>26.2%</td>
+      <td>36.5%</td>
       <td>H</td>
+      <td>1.35</td>
+      <td>1.32</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Real Betis</td>
       <td>Osasuna</td>
-      <td>0.601</td>
-      <td>0.202</td>
-      <td>0.197</td>
+      <td>42.8%</td>
+      <td>29.8%</td>
+      <td>27.4%</td>
       <td>H</td>
+      <td>1.20</td>
+      <td>0.89</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Real Madrid</td>
       <td>Villarreal</td>
-      <td>0.737</td>
-      <td>0.155</td>
-      <td>0.108</td>
+      <td>52.3%</td>
+      <td>23.6%</td>
+      <td>24.1%</td>
       <td>H</td>
+      <td>1.84</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>8</td>
+      <td>Real Racing Club</td>
+      <td>Valencia</td>
+      <td>36.9%</td>
+      <td>29.1%</td>
+      <td>34.0%</td>
+      <td>H</td>
+      <td>1.14</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>8</td>
       <td>Real Sociedad</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.507</td>
-      <td>0.222</td>
-      <td>0.272</td>
+      <td>35.9%</td>
+      <td>28.8%</td>
+      <td>35.4%</td>
       <td>H</td>
+      <td>1.16</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Celta Vigo</td>
       <td>Deportivo Alavés</td>
-      <td>0.525</td>
-      <td>0.222</td>
-      <td>0.253</td>
-      <td>H</td>
+      <td>33.1%</td>
+      <td>30.4%</td>
+      <td>36.5%</td>
+      <td>A</td>
+      <td>0.99</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Deportivo de A Coruña</td>
-      <td>Levante</td>
-      <td>0.462</td>
-      <td>0.222</td>
-      <td>0.316</td>
+      <td>Levante UD</td>
+      <td>43.2%</td>
+      <td>27.8%</td>
+      <td>28.9%</td>
       <td>H</td>
+      <td>1.34</td>
+      <td>1.04</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Espanyol</td>
       <td>Atlético Madrid</td>
-      <td>0.188</td>
-      <td>0.200</td>
-      <td>0.612</td>
+      <td>31.1%</td>
+      <td>26.2%</td>
+      <td>42.7%</td>
       <td>A</td>
+      <td>1.19</td>
+      <td>1.44</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Getafe</td>
       <td>Rayo Vallecano</td>
-      <td>0.440</td>
-      <td>0.223</td>
-      <td>0.337</td>
+      <td>37.0%</td>
+      <td>27.6%</td>
+      <td>35.4%</td>
       <td>H</td>
+      <td>1.18</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Real Sociedad</td>
-      <td>0.420</td>
-      <td>0.231</td>
-      <td>0.349</td>
-      <td>D</td>
+      <td>37.7%</td>
+      <td>28.6%</td>
+      <td>33.7%</td>
+      <td>H</td>
+      <td>1.19</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Osasuna</td>
-      <td>Racing de Santander</td>
-      <td>0.437</td>
-      <td>0.232</td>
-      <td>0.331</td>
+      <td>Real Racing Club</td>
+      <td>39.0%</td>
+      <td>28.2%</td>
+      <td>32.8%</td>
       <td>H</td>
+      <td>1.20</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Real Betis</td>
-      <td>Barcelona</td>
-      <td>0.578</td>
-      <td>0.208</td>
-      <td>0.214</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>32.5%</td>
+      <td>27.9%</td>
+      <td>39.5%</td>
+      <td>A</td>
+      <td>1.08</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Real Madrid</td>
       <td>Sevilla</td>
-      <td>0.837</td>
-      <td>0.108</td>
-      <td>0.056</td>
+      <td>51.4%</td>
+      <td>24.1%</td>
+      <td>24.6%</td>
       <td>H</td>
+      <td>1.64</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Valencia</td>
-      <td>Athletic Bilbao</td>
-      <td>0.436</td>
-      <td>0.235</td>
-      <td>0.330</td>
+      <td>Athletic Club</td>
+      <td>41.1%</td>
+      <td>29.4%</td>
+      <td>29.6%</td>
       <td>H</td>
+      <td>1.25</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>9</td>
       <td>Villarreal</td>
       <td>Elche</td>
-      <td>0.601</td>
-      <td>0.211</td>
-      <td>0.188</td>
+      <td>52.9%</td>
+      <td>22.0%</td>
+      <td>25.1%</td>
       <td>H</td>
+      <td>1.94</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Getafe</td>
-      <td>0.465</td>
-      <td>0.231</td>
-      <td>0.304</td>
+      <td>41.9%</td>
+      <td>26.6%</td>
+      <td>31.5%</td>
       <td>H</td>
+      <td>1.35</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Atlético Madrid</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.698</td>
-      <td>0.168</td>
-      <td>0.134</td>
+      <td>47.7%</td>
+      <td>26.4%</td>
+      <td>26.0%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>10</td>
-      <td>Barcelona</td>
-      <td>Real Madrid</td>
-      <td>0.118</td>
-      <td>0.161</td>
-      <td>0.721</td>
-      <td>A</td>
+      <td>1.47</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Celta Vigo</td>
       <td>Real Betis</td>
-      <td>0.355</td>
-      <td>0.239</td>
-      <td>0.406</td>
-      <td>D</td>
+      <td>31.9%</td>
+      <td>29.8%</td>
+      <td>38.3%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Deportivo Alavés</td>
-      <td>Málaga</td>
-      <td>0.418</td>
-      <td>0.234</td>
-      <td>0.348</td>
-      <td>D</td>
+      <td>Málaga CF</td>
+      <td>47.7%</td>
+      <td>26.9%</td>
+      <td>25.4%</td>
+      <td>H</td>
+      <td>1.41</td>
+      <td>0.96</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
-      <td>Racing de Santander</td>
-      <td>Espanyol</td>
-      <td>0.526</td>
-      <td>0.217</td>
-      <td>0.257</td>
+      <td>FC Barcelona</td>
+      <td>Real Madrid</td>
+      <td>39.9%</td>
+      <td>26.8%</td>
+      <td>33.3%</td>
       <td>H</td>
+      <td>1.35</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Rayo Vallecano</td>
       <td>Elche</td>
-      <td>0.488</td>
-      <td>0.229</td>
-      <td>0.283</td>
+      <td>46.5%</td>
+      <td>24.9%</td>
+      <td>28.6%</td>
       <td>H</td>
+      <td>1.56</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>10</td>
+      <td>Real Racing Club</td>
+      <td>Espanyol</td>
+      <td>39.5%</td>
+      <td>25.7%</td>
+      <td>34.8%</td>
+      <td>H</td>
+      <td>1.36</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Real Sociedad</td>
-      <td>Levante</td>
-      <td>0.505</td>
-      <td>0.221</td>
-      <td>0.273</td>
+      <td>Levante UD</td>
+      <td>40.5%</td>
+      <td>28.2%</td>
+      <td>31.3%</td>
       <td>H</td>
+      <td>1.26</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Sevilla</td>
       <td>Osasuna</td>
-      <td>0.484</td>
-      <td>0.222</td>
-      <td>0.294</td>
+      <td>38.0%</td>
+      <td>28.7%</td>
+      <td>33.2%</td>
       <td>H</td>
+      <td>1.22</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>10</td>
       <td>Valencia</td>
       <td>Villarreal</td>
-      <td>0.309</td>
-      <td>0.239</td>
-      <td>0.453</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>11</td>
-      <td>Athletic Bilbao</td>
-      <td>Real Sociedad</td>
-      <td>0.427</td>
-      <td>0.238</td>
-      <td>0.336</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>11</td>
-      <td>Barcelona</td>
-      <td>Deportivo Alavés</td>
-      <td>0.497</td>
-      <td>0.226</td>
-      <td>0.277</td>
+      <td>38.4%</td>
+      <td>27.9%</td>
+      <td>33.6%</td>
       <td>H</td>
+      <td>1.26</td>
+      <td>1.16</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>11</td>
+      <td>Athletic Club</td>
+      <td>Real Sociedad</td>
+      <td>38.8%</td>
+      <td>26.4%</td>
+      <td>34.8%</td>
+      <td>H</td>
+      <td>1.31</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Deportivo de A Coruña</td>
       <td>Osasuna</td>
-      <td>0.483</td>
-      <td>0.234</td>
-      <td>0.283</td>
+      <td>36.2%</td>
+      <td>30.0%</td>
+      <td>33.8%</td>
       <td>H</td>
+      <td>1.08</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Elche</td>
       <td>Valencia</td>
-      <td>0.471</td>
-      <td>0.228</td>
-      <td>0.301</td>
+      <td>27.8%</td>
+      <td>28.2%</td>
+      <td>44.0%</td>
+      <td>A</td>
+      <td>0.99</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>11</td>
+      <td>FC Barcelona</td>
+      <td>Deportivo Alavés</td>
+      <td>46.4%</td>
+      <td>26.3%</td>
+      <td>27.3%</td>
       <td>H</td>
+      <td>1.39</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Getafe</td>
       <td>Sevilla</td>
-      <td>0.455</td>
-      <td>0.233</td>
-      <td>0.312</td>
-      <td>H</td>
+      <td>32.4%</td>
+      <td>27.7%</td>
+      <td>40.0%</td>
+      <td>A</td>
+      <td>1.13</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Atlético Madrid</td>
-      <td>0.240</td>
-      <td>0.221</td>
-      <td>0.539</td>
+      <td>26.2%</td>
+      <td>25.3%</td>
+      <td>48.5%</td>
       <td>A</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>11</td>
-      <td>Racing de Santander</td>
-      <td>Real Madrid</td>
-      <td>0.126</td>
-      <td>0.161</td>
-      <td>0.714</td>
-      <td>A</td>
+      <td>1.06</td>
+      <td>1.52</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Rayo Vallecano</td>
       <td>Celta Vigo</td>
-      <td>0.457</td>
-      <td>0.236</td>
-      <td>0.307</td>
-      <td>H</td>
+      <td>32.5%</td>
+      <td>29.5%</td>
+      <td>38.0%</td>
+      <td>A</td>
+      <td>1.02</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Real Betis</td>
-      <td>Málaga</td>
-      <td>0.579</td>
-      <td>0.218</td>
-      <td>0.202</td>
+      <td>Málaga CF</td>
+      <td>48.3%</td>
+      <td>27.1%</td>
+      <td>24.6%</td>
       <td>H</td>
+      <td>1.42</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>11</td>
+      <td>Real Racing Club</td>
+      <td>Real Madrid</td>
+      <td>27.4%</td>
+      <td>25.8%</td>
+      <td>46.8%</td>
+      <td>A</td>
+      <td>1.13</td>
+      <td>1.55</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>11</td>
       <td>Villarreal</td>
       <td>Espanyol</td>
-      <td>0.667</td>
-      <td>0.183</td>
-      <td>0.150</td>
+      <td>40.7%</td>
+      <td>23.9%</td>
+      <td>35.4%</td>
       <td>H</td>
+      <td>1.52</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Atlético Madrid</td>
-      <td>Barcelona</td>
-      <td>0.688</td>
-      <td>0.180</td>
-      <td>0.132</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>34.1%</td>
+      <td>26.1%</td>
+      <td>39.8%</td>
+      <td>A</td>
+      <td>1.22</td>
+      <td>1.34</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Celta Vigo</td>
-      <td>Levante</td>
-      <td>0.482</td>
-      <td>0.229</td>
-      <td>0.289</td>
+      <td>Levante UD</td>
+      <td>43.2%</td>
+      <td>29.1%</td>
+      <td>27.7%</td>
       <td>H</td>
+      <td>1.23</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Elche</td>
       <td>Real Betis</td>
-      <td>0.334</td>
-      <td>0.236</td>
-      <td>0.430</td>
-      <td>D</td>
+      <td>22.5%</td>
+      <td>24.8%</td>
+      <td>52.7%</td>
+      <td>A</td>
+      <td>0.97</td>
+      <td>1.63</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Espanyol</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.400</td>
-      <td>0.236</td>
-      <td>0.364</td>
-      <td>D</td>
+      <td>39.5%</td>
+      <td>27.4%</td>
+      <td>33.1%</td>
+      <td>H</td>
+      <td>1.29</td>
+      <td>1.16</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
-      <td>Málaga</td>
-      <td>Racing de Santander</td>
-      <td>0.464</td>
-      <td>0.230</td>
-      <td>0.306</td>
-      <td>H</td>
+      <td>Málaga CF</td>
+      <td>Real Racing Club</td>
+      <td>36.0%</td>
+      <td>26.2%</td>
+      <td>37.8%</td>
+      <td>A</td>
+      <td>1.25</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Osasuna</td>
-      <td>Athletic Bilbao</td>
-      <td>0.435</td>
-      <td>0.232</td>
-      <td>0.332</td>
+      <td>Athletic Club</td>
+      <td>41.6%</td>
+      <td>27.0%</td>
+      <td>31.4%</td>
       <td>H</td>
+      <td>1.30</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Real Sociedad</td>
       <td>Rayo Vallecano</td>
-      <td>0.481</td>
-      <td>0.227</td>
-      <td>0.291</td>
+      <td>38.7%</td>
+      <td>28.3%</td>
+      <td>33.0%</td>
       <td>H</td>
+      <td>1.25</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Sevilla</td>
       <td>Deportivo Alavés</td>
-      <td>0.500</td>
-      <td>0.227</td>
-      <td>0.273</td>
-      <td>H</td>
+      <td>33.6%</td>
+      <td>27.1%</td>
+      <td>39.3%</td>
+      <td>A</td>
+      <td>1.18</td>
+      <td>1.30</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Valencia</td>
       <td>Real Madrid</td>
-      <td>0.105</td>
-      <td>0.158</td>
-      <td>0.737</td>
+      <td>27.4%</td>
+      <td>28.7%</td>
+      <td>43.9%</td>
       <td>A</td>
+      <td>0.94</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>12</td>
       <td>Villarreal</td>
       <td>Getafe</td>
-      <td>0.615</td>
-      <td>0.197</td>
-      <td>0.188</td>
+      <td>46.2%</td>
+      <td>25.4%</td>
+      <td>28.4%</td>
       <td>H</td>
+      <td>1.51</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Espanyol</td>
-      <td>0.529</td>
-      <td>0.218</td>
-      <td>0.253</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>13</td>
-      <td>Barcelona</td>
-      <td>Villarreal</td>
-      <td>0.327</td>
-      <td>0.232</td>
-      <td>0.441</td>
+      <td>35.6%</td>
+      <td>25.6%</td>
+      <td>38.8%</td>
       <td>A</td>
+      <td>1.33</td>
+      <td>1.37</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Deportivo Alavés</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.419</td>
-      <td>0.238</td>
-      <td>0.343</td>
-      <td>D</td>
+      <td>44.4%</td>
+      <td>27.5%</td>
+      <td>28.1%</td>
+      <td>H</td>
+      <td>1.32</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>13</td>
+      <td>FC Barcelona</td>
+      <td>Villarreal</td>
+      <td>54.1%</td>
+      <td>23.0%</td>
+      <td>22.8%</td>
+      <td>H</td>
+      <td>1.82</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Getafe</td>
       <td>Atlético Madrid</td>
-      <td>0.230</td>
-      <td>0.216</td>
-      <td>0.554</td>
+      <td>25.9%</td>
+      <td>26.5%</td>
+      <td>47.7%</td>
       <td>A</td>
+      <td>0.99</td>
+      <td>1.44</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Elche</td>
-      <td>0.467</td>
-      <td>0.238</td>
-      <td>0.295</td>
+      <td>44.8%</td>
+      <td>25.0%</td>
+      <td>30.2%</td>
       <td>H</td>
+      <td>1.50</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Osasuna</td>
-      <td>Málaga</td>
-      <td>0.439</td>
-      <td>0.227</td>
-      <td>0.334</td>
+      <td>Málaga CF</td>
+      <td>41.4%</td>
+      <td>27.9%</td>
+      <td>30.7%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>13</td>
-      <td>Racing de Santander</td>
-      <td>Real Sociedad</td>
-      <td>0.423</td>
-      <td>0.237</td>
-      <td>0.340</td>
-      <td>D</td>
+      <td>1.19</td>
+      <td>0.99</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Rayo Vallecano</td>
       <td>Valencia</td>
-      <td>0.502</td>
-      <td>0.229</td>
-      <td>0.269</td>
-      <td>H</td>
+      <td>32.5%</td>
+      <td>29.8%</td>
+      <td>37.8%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Real Madrid</td>
       <td>Celta Vigo</td>
-      <td>0.834</td>
-      <td>0.106</td>
-      <td>0.060</td>
+      <td>48.2%</td>
+      <td>27.5%</td>
+      <td>24.3%</td>
       <td>H</td>
+      <td>1.37</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>13</td>
+      <td>Real Racing Club</td>
+      <td>Real Sociedad</td>
+      <td>41.6%</td>
+      <td>27.0%</td>
+      <td>31.4%</td>
+      <td>H</td>
+      <td>1.34</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>13</td>
       <td>Sevilla</td>
       <td>Real Betis</td>
-      <td>0.341</td>
-      <td>0.232</td>
-      <td>0.427</td>
-      <td>D</td>
+      <td>32.7%</td>
+      <td>27.1%</td>
+      <td>40.2%</td>
+      <td>A</td>
+      <td>1.14</td>
+      <td>1.29</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Celta Vigo</td>
       <td>Villarreal</td>
-      <td>0.344</td>
-      <td>0.231</td>
-      <td>0.424</td>
-      <td>D</td>
+      <td>39.1%</td>
+      <td>27.1%</td>
+      <td>33.7%</td>
+      <td>H</td>
+      <td>1.29</td>
+      <td>1.17</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Deportivo de A Coruña</td>
-      <td>Barcelona</td>
-      <td>0.455</td>
-      <td>0.229</td>
-      <td>0.316</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>25.0%</td>
+      <td>26.8%</td>
+      <td>48.2%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.45</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Elche</td>
       <td>Atlético Madrid</td>
-      <td>0.232</td>
-      <td>0.209</td>
-      <td>0.559</td>
+      <td>22.5%</td>
+      <td>23.0%</td>
+      <td>54.5%</td>
       <td>A</td>
+      <td>1.06</td>
+      <td>1.79</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Espanyol</td>
       <td>Getafe</td>
-      <td>0.401</td>
-      <td>0.242</td>
-      <td>0.357</td>
-      <td>D</td>
+      <td>43.8%</td>
+      <td>27.2%</td>
+      <td>28.9%</td>
+      <td>H</td>
+      <td>1.33</td>
+      <td>1.02</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
-      <td>Levante</td>
-      <td>Racing de Santander</td>
-      <td>0.459</td>
-      <td>0.231</td>
-      <td>0.310</td>
-      <td>H</td>
+      <td>Levante UD</td>
+      <td>Real Racing Club</td>
+      <td>33.1%</td>
+      <td>26.7%</td>
+      <td>40.2%</td>
+      <td>A</td>
+      <td>1.21</td>
+      <td>1.35</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
-      <td>Málaga</td>
-      <td>Athletic Bilbao</td>
-      <td>0.453</td>
-      <td>0.238</td>
-      <td>0.309</td>
+      <td>Málaga CF</td>
+      <td>Athletic Club</td>
+      <td>38.7%</td>
+      <td>26.3%</td>
+      <td>35.0%</td>
       <td>H</td>
+      <td>1.33</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Real Betis</td>
       <td>Rayo Vallecano</td>
-      <td>0.568</td>
-      <td>0.212</td>
-      <td>0.220</td>
+      <td>50.4%</td>
+      <td>26.7%</td>
+      <td>22.8%</td>
       <td>H</td>
+      <td>1.50</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Real Madrid</td>
       <td>Deportivo Alavés</td>
-      <td>0.860</td>
-      <td>0.095</td>
-      <td>0.044</td>
+      <td>45.3%</td>
+      <td>27.0%</td>
+      <td>27.7%</td>
       <td>H</td>
+      <td>1.40</td>
+      <td>1.04</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Real Sociedad</td>
       <td>Sevilla</td>
-      <td>0.516</td>
-      <td>0.221</td>
-      <td>0.263</td>
-      <td>H</td>
+      <td>35.3%</td>
+      <td>27.6%</td>
+      <td>37.1%</td>
+      <td>A</td>
+      <td>1.20</td>
+      <td>1.25</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>14</td>
       <td>Valencia</td>
       <td>Osasuna</td>
-      <td>0.461</td>
-      <td>0.231</td>
-      <td>0.309</td>
+      <td>36.2%</td>
+      <td>32.3%</td>
+      <td>31.6%</td>
       <td>H</td>
+      <td>0.99</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Real Madrid</td>
-      <td>0.117</td>
-      <td>0.159</td>
-      <td>0.724</td>
+      <td>25.4%</td>
+      <td>24.6%</td>
+      <td>49.9%</td>
       <td>A</td>
+      <td>1.11</td>
+      <td>1.66</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Atlético Madrid</td>
       <td>Real Betis</td>
-      <td>0.583</td>
-      <td>0.210</td>
-      <td>0.207</td>
+      <td>39.9%</td>
+      <td>27.9%</td>
+      <td>32.3%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>15</td>
-      <td>Barcelona</td>
-      <td>Celta Vigo</td>
-      <td>0.444</td>
-      <td>0.229</td>
-      <td>0.327</td>
-      <td>H</td>
+      <td>1.29</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Deportivo Alavés</td>
       <td>Espanyol</td>
-      <td>0.467</td>
-      <td>0.240</td>
-      <td>0.293</td>
+      <td>44.3%</td>
+      <td>27.1%</td>
+      <td>28.6%</td>
       <td>H</td>
+      <td>1.38</td>
+      <td>1.06</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>15</td>
+      <td>FC Barcelona</td>
+      <td>Celta Vigo</td>
+      <td>49.0%</td>
+      <td>27.6%</td>
+      <td>23.4%</td>
+      <td>H</td>
+      <td>1.36</td>
+      <td>0.85</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Getafe</td>
       <td>Valencia</td>
-      <td>0.456</td>
-      <td>0.236</td>
-      <td>0.308</td>
-      <td>H</td>
+      <td>30.9%</td>
+      <td>31.6%</td>
+      <td>37.5%</td>
+      <td>A</td>
+      <td>0.92</td>
+      <td>1.04</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Osasuna</td>
       <td>Elche</td>
-      <td>0.454</td>
-      <td>0.234</td>
-      <td>0.312</td>
+      <td>49.2%</td>
+      <td>26.2%</td>
+      <td>24.6%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>15</td>
-      <td>Racing de Santander</td>
-      <td>Deportivo de A Coruña</td>
-      <td>0.455</td>
-      <td>0.235</td>
-      <td>0.311</td>
-      <td>H</td>
+      <td>1.49</td>
+      <td>0.97</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Rayo Vallecano</td>
-      <td>Levante</td>
-      <td>0.476</td>
-      <td>0.223</td>
-      <td>0.301</td>
+      <td>Levante UD</td>
+      <td>39.5%</td>
+      <td>26.9%</td>
+      <td>33.7%</td>
       <td>H</td>
+      <td>1.31</td>
+      <td>1.19</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>15</td>
+      <td>Real Racing Club</td>
+      <td>Deportivo de A Coruña</td>
+      <td>40.0%</td>
+      <td>26.9%</td>
+      <td>33.1%</td>
+      <td>H</td>
+      <td>1.31</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Sevilla</td>
-      <td>Málaga</td>
-      <td>0.444</td>
-      <td>0.237</td>
-      <td>0.319</td>
+      <td>Málaga CF</td>
+      <td>42.7%</td>
+      <td>26.9%</td>
+      <td>30.4%</td>
       <td>H</td>
+      <td>1.41</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>15</td>
       <td>Villarreal</td>
       <td>Real Sociedad</td>
-      <td>0.569</td>
-      <td>0.206</td>
-      <td>0.225</td>
+      <td>43.8%</td>
+      <td>25.6%</td>
+      <td>30.7%</td>
       <td>H</td>
+      <td>1.49</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Atlético Madrid</td>
       <td>Valencia</td>
-      <td>0.717</td>
-      <td>0.160</td>
-      <td>0.123</td>
+      <td>44.2%</td>
+      <td>28.9%</td>
+      <td>26.9%</td>
       <td>H</td>
+      <td>1.27</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Deportivo de A Coruña</td>
-      <td>Athletic Bilbao</td>
-      <td>0.459</td>
-      <td>0.228</td>
-      <td>0.312</td>
+      <td>Athletic Club</td>
+      <td>41.2%</td>
+      <td>26.2%</td>
+      <td>32.6%</td>
       <td>H</td>
+      <td>1.38</td>
+      <td>1.20</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Elche</td>
       <td>Sevilla</td>
-      <td>0.452</td>
-      <td>0.234</td>
-      <td>0.314</td>
-      <td>H</td>
+      <td>28.7%</td>
+      <td>24.2%</td>
+      <td>47.0%</td>
+      <td>A</td>
+      <td>1.21</td>
+      <td>1.62</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Espanyol</td>
       <td>Celta Vigo</td>
-      <td>0.377</td>
-      <td>0.242</td>
-      <td>0.382</td>
-      <td>D</td>
+      <td>36.5%</td>
+      <td>29.2%</td>
+      <td>34.3%</td>
+      <td>H</td>
+      <td>1.13</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Deportivo Alavés</td>
-      <td>0.511</td>
-      <td>0.220</td>
-      <td>0.268</td>
-      <td>H</td>
+      <td>28.2%</td>
+      <td>27.1%</td>
+      <td>44.7%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.34</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
-      <td>Málaga</td>
-      <td>Barcelona</td>
-      <td>0.457</td>
-      <td>0.230</td>
-      <td>0.313</td>
-      <td>H</td>
+      <td>Málaga CF</td>
+      <td>FC Barcelona</td>
+      <td>23.9%</td>
+      <td>25.7%</td>
+      <td>50.4%</td>
+      <td>A</td>
+      <td>0.97</td>
+      <td>1.53</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Real Betis</td>
-      <td>Racing de Santander</td>
-      <td>0.579</td>
-      <td>0.204</td>
-      <td>0.217</td>
+      <td>Real Racing Club</td>
+      <td>44.8%</td>
+      <td>26.7%</td>
+      <td>28.5%</td>
       <td>H</td>
+      <td>1.40</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Real Madrid</td>
       <td>Osasuna</td>
-      <td>0.848</td>
-      <td>0.103</td>
-      <td>0.050</td>
+      <td>49.9%</td>
+      <td>26.7%</td>
+      <td>23.4%</td>
       <td>H</td>
+      <td>1.43</td>
+      <td>0.89</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Real Sociedad</td>
       <td>Getafe</td>
-      <td>0.512</td>
-      <td>0.227</td>
-      <td>0.262</td>
+      <td>40.3%</td>
+      <td>28.9%</td>
+      <td>30.9%</td>
       <td>H</td>
+      <td>1.20</td>
+      <td>1.02</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>16</td>
       <td>Villarreal</td>
       <td>Rayo Vallecano</td>
-      <td>0.589</td>
-      <td>0.207</td>
-      <td>0.204</td>
+      <td>45.3%</td>
+      <td>25.0%</td>
+      <td>29.7%</td>
       <td>H</td>
+      <td>1.60</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Real Betis</td>
-      <td>0.342</td>
-      <td>0.238</td>
-      <td>0.421</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>17</td>
-      <td>Barcelona</td>
-      <td>Real Sociedad</td>
-      <td>0.428</td>
-      <td>0.231</td>
-      <td>0.341</td>
-      <td>D</td>
+      <td>29.1%</td>
+      <td>26.8%</td>
+      <td>44.1%</td>
+      <td>A</td>
+      <td>1.11</td>
+      <td>1.42</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Celta Vigo</td>
       <td>Atlético Madrid</td>
-      <td>0.255</td>
-      <td>0.213</td>
-      <td>0.533</td>
+      <td>31.8%</td>
+      <td>28.6%</td>
+      <td>39.6%</td>
       <td>A</td>
+      <td>1.03</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Deportivo Alavés</td>
       <td>Elche</td>
-      <td>0.426</td>
-      <td>0.230</td>
-      <td>0.344</td>
-      <td>D</td>
+      <td>56.5%</td>
+      <td>23.6%</td>
+      <td>19.9%</td>
+      <td>H</td>
+      <td>1.75</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Deportivo de A Coruña</td>
       <td>Real Madrid</td>
-      <td>0.120</td>
-      <td>0.167</td>
-      <td>0.712</td>
+      <td>26.7%</td>
+      <td>26.2%</td>
+      <td>47.1%</td>
       <td>A</td>
+      <td>1.04</td>
+      <td>1.46</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>17</td>
+      <td>FC Barcelona</td>
+      <td>Real Sociedad</td>
+      <td>54.5%</td>
+      <td>25.1%</td>
+      <td>20.3%</td>
+      <td>H</td>
+      <td>1.57</td>
+      <td>0.86</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Getafe</td>
-      <td>Levante</td>
-      <td>0.441</td>
-      <td>0.233</td>
-      <td>0.326</td>
+      <td>Levante UD</td>
+      <td>37.5%</td>
+      <td>28.8%</td>
+      <td>33.7%</td>
       <td>H</td>
+      <td>1.17</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Osasuna</td>
       <td>Villarreal</td>
-      <td>0.309</td>
-      <td>0.229</td>
-      <td>0.461</td>
-      <td>A</td>
+      <td>39.2%</td>
+      <td>25.8%</td>
+      <td>35.0%</td>
+      <td>H</td>
+      <td>1.31</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Rayo Vallecano</td>
-      <td>Málaga</td>
-      <td>0.482</td>
-      <td>0.222</td>
-      <td>0.295</td>
+      <td>Málaga CF</td>
+      <td>37.1%</td>
+      <td>27.7%</td>
+      <td>35.2%</td>
       <td>H</td>
+      <td>1.24</td>
+      <td>1.20</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Sevilla</td>
-      <td>Racing de Santander</td>
-      <td>0.452</td>
-      <td>0.238</td>
-      <td>0.310</td>
+      <td>Real Racing Club</td>
+      <td>39.9%</td>
+      <td>25.7%</td>
+      <td>34.4%</td>
       <td>H</td>
+      <td>1.42</td>
+      <td>1.30</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>17</td>
       <td>Valencia</td>
       <td>Espanyol</td>
-      <td>0.500</td>
-      <td>0.230</td>
-      <td>0.270</td>
+      <td>38.0%</td>
+      <td>29.3%</td>
+      <td>32.7%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>1.02</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Celta Vigo</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.477</td>
-      <td>0.226</td>
-      <td>0.297</td>
+      <td>39.6%</td>
+      <td>29.6%</td>
+      <td>30.8%</td>
       <td>H</td>
+      <td>1.15</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Espanyol</td>
-      <td>Barcelona</td>
-      <td>0.402</td>
-      <td>0.227</td>
-      <td>0.371</td>
-      <td>D</td>
+      <td>FC Barcelona</td>
+      <td>26.2%</td>
+      <td>25.3%</td>
+      <td>48.5%</td>
+      <td>A</td>
+      <td>1.04</td>
+      <td>1.52</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Valencia</td>
-      <td>0.483</td>
-      <td>0.225</td>
-      <td>0.292</td>
-      <td>H</td>
+      <td>31.8%</td>
+      <td>29.6%</td>
+      <td>38.6%</td>
+      <td>A</td>
+      <td>1.00</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Elche</td>
-      <td>0.473</td>
-      <td>0.233</td>
-      <td>0.294</td>
+      <td>47.2%</td>
+      <td>25.3%</td>
+      <td>27.5%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>18</td>
-      <td>Racing de Santander</td>
-      <td>Athletic Bilbao</td>
-      <td>0.464</td>
-      <td>0.225</td>
-      <td>0.311</td>
-      <td>H</td>
+      <td>1.54</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Rayo Vallecano</td>
       <td>Atlético Madrid</td>
-      <td>0.253</td>
-      <td>0.220</td>
-      <td>0.527</td>
+      <td>27.9%</td>
+      <td>25.4%</td>
+      <td>46.6%</td>
       <td>A</td>
+      <td>1.12</td>
+      <td>1.52</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Real Betis</td>
       <td>Deportivo Alavés</td>
-      <td>0.623</td>
-      <td>0.198</td>
-      <td>0.180</td>
+      <td>38.5%</td>
+      <td>29.4%</td>
+      <td>32.2%</td>
       <td>H</td>
+      <td>1.17</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Real Madrid</td>
       <td>Getafe</td>
-      <td>0.847</td>
-      <td>0.102</td>
-      <td>0.050</td>
+      <td>55.7%</td>
+      <td>25.1%</td>
+      <td>19.2%</td>
       <td>H</td>
+      <td>1.63</td>
+      <td>0.85</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>18</td>
+      <td>Real Racing Club</td>
+      <td>Athletic Club</td>
+      <td>42.7%</td>
+      <td>25.1%</td>
+      <td>32.2%</td>
+      <td>H</td>
+      <td>1.51</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Real Sociedad</td>
       <td>Osasuna</td>
-      <td>0.523</td>
-      <td>0.219</td>
-      <td>0.258</td>
-      <td>H</td>
+      <td>35.1%</td>
+      <td>29.6%</td>
+      <td>35.3%</td>
+      <td>A</td>
+      <td>1.05</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>18</td>
       <td>Villarreal</td>
       <td>Sevilla</td>
-      <td>0.601</td>
-      <td>0.202</td>
-      <td>0.197</td>
+      <td>39.7%</td>
+      <td>24.9%</td>
+      <td>35.5%</td>
       <td>H</td>
+      <td>1.54</td>
+      <td>1.45</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Villarreal</td>
-      <td>0.327</td>
-      <td>0.229</td>
-      <td>0.444</td>
+      <td>36.1%</td>
+      <td>24.4%</td>
+      <td>39.5%</td>
       <td>A</td>
+      <td>1.47</td>
+      <td>1.54</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Atlético Madrid</td>
-      <td>Racing de Santander</td>
-      <td>0.692</td>
-      <td>0.174</td>
-      <td>0.134</td>
+      <td>Real Racing Club</td>
+      <td>48.5%</td>
+      <td>24.4%</td>
+      <td>27.1%</td>
       <td>H</td>
+      <td>1.60</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Deportivo Alavés</td>
       <td>Real Sociedad</td>
-      <td>0.370</td>
-      <td>0.231</td>
-      <td>0.400</td>
-      <td>D</td>
+      <td>45.9%</td>
+      <td>28.2%</td>
+      <td>25.9%</td>
+      <td>H</td>
+      <td>1.34</td>
+      <td>0.94</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Deportivo de A Coruña</td>
       <td>Rayo Vallecano</td>
-      <td>0.447</td>
-      <td>0.229</td>
-      <td>0.324</td>
+      <td>42.2%</td>
+      <td>27.5%</td>
+      <td>30.2%</td>
       <td>H</td>
+      <td>1.34</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Elche</td>
       <td>Getafe</td>
-      <td>0.461</td>
-      <td>0.235</td>
-      <td>0.305</td>
-      <td>H</td>
+      <td>34.2%</td>
+      <td>26.8%</td>
+      <td>39.0%</td>
+      <td>A</td>
+      <td>1.19</td>
+      <td>1.31</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Espanyol</td>
       <td>Real Betis</td>
-      <td>0.289</td>
-      <td>0.223</td>
-      <td>0.488</td>
+      <td>31.7%</td>
+      <td>28.0%</td>
+      <td>40.2%</td>
       <td>A</td>
+      <td>1.10</td>
+      <td>1.27</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Osasuna</td>
-      <td>Barcelona</td>
-      <td>0.439</td>
-      <td>0.228</td>
-      <td>0.333</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>26.1%</td>
+      <td>28.0%</td>
+      <td>45.9%</td>
+      <td>A</td>
+      <td>0.92</td>
+      <td>1.32</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Real Madrid</td>
-      <td>Levante</td>
-      <td>0.840</td>
-      <td>0.102</td>
-      <td>0.058</td>
+      <td>Levante UD</td>
+      <td>57.2%</td>
+      <td>23.6%</td>
+      <td>19.2%</td>
       <td>H</td>
+      <td>1.74</td>
+      <td>0.91</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Sevilla</td>
       <td>Celta Vigo</td>
-      <td>0.429</td>
-      <td>0.233</td>
-      <td>0.339</td>
-      <td>D</td>
+      <td>36.8%</td>
+      <td>28.7%</td>
+      <td>34.5%</td>
+      <td>H</td>
+      <td>1.16</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>19</td>
       <td>Valencia</td>
-      <td>Málaga</td>
-      <td>0.443</td>
-      <td>0.232</td>
-      <td>0.325</td>
+      <td>Málaga CF</td>
+      <td>40.8%</td>
+      <td>30.0%</td>
+      <td>29.2%</td>
       <td>H</td>
+      <td>1.15</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Atlético Madrid</td>
       <td>Real Sociedad</td>
-      <td>0.660</td>
-      <td>0.188</td>
-      <td>0.152</td>
+      <td>49.2%</td>
+      <td>26.4%</td>
+      <td>24.4%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>20</td>
-      <td>Barcelona</td>
-      <td>Elche</td>
-      <td>0.469</td>
-      <td>0.239</td>
-      <td>0.293</td>
-      <td>H</td>
+      <td>1.49</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Celta Vigo</td>
       <td>Valencia</td>
-      <td>0.503</td>
-      <td>0.220</td>
-      <td>0.277</td>
+      <td>36.6%</td>
+      <td>32.7%</td>
+      <td>30.7%</td>
       <td>H</td>
+      <td>0.96</td>
+      <td>0.87</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>20</td>
+      <td>FC Barcelona</td>
+      <td>Elche</td>
+      <td>64.6%</td>
+      <td>20.0%</td>
+      <td>15.4%</td>
+      <td>H</td>
+      <td>2.04</td>
+      <td>0.88</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Getafe</td>
-      <td>Athletic Bilbao</td>
-      <td>0.452</td>
-      <td>0.229</td>
-      <td>0.319</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>20</td>
-      <td>Levante</td>
-      <td>Espanyol</td>
-      <td>0.513</td>
-      <td>0.228</td>
-      <td>0.259</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>20</td>
-      <td>Málaga</td>
-      <td>Real Madrid</td>
-      <td>0.120</td>
-      <td>0.164</td>
-      <td>0.716</td>
+      <td>Athletic Club</td>
+      <td>35.6%</td>
+      <td>27.6%</td>
+      <td>36.8%</td>
       <td>A</td>
+      <td>1.21</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
-      <td>Racing de Santander</td>
-      <td>Osasuna</td>
-      <td>0.481</td>
-      <td>0.225</td>
-      <td>0.294</td>
-      <td>H</td>
+      <td>Levante UD</td>
+      <td>Espanyol</td>
+      <td>32.9%</td>
+      <td>26.6%</td>
+      <td>40.5%</td>
+      <td>A</td>
+      <td>1.17</td>
+      <td>1.33</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>20</td>
+      <td>Málaga CF</td>
+      <td>Real Madrid</td>
+      <td>24.6%</td>
+      <td>25.3%</td>
+      <td>50.1%</td>
+      <td>A</td>
+      <td>0.99</td>
+      <td>1.52</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Rayo Vallecano</td>
       <td>Sevilla</td>
-      <td>0.477</td>
-      <td>0.227</td>
-      <td>0.296</td>
-      <td>H</td>
+      <td>33.8%</td>
+      <td>26.4%</td>
+      <td>39.8%</td>
+      <td>A</td>
+      <td>1.24</td>
+      <td>1.37</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Real Betis</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.580</td>
-      <td>0.211</td>
-      <td>0.209</td>
+      <td>45.9%</td>
+      <td>27.6%</td>
+      <td>26.5%</td>
       <td>H</td>
+      <td>1.35</td>
+      <td>0.97</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>20</td>
+      <td>Real Racing Club</td>
+      <td>Osasuna</td>
+      <td>37.7%</td>
+      <td>28.8%</td>
+      <td>33.6%</td>
+      <td>H</td>
+      <td>1.17</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>20</td>
       <td>Villarreal</td>
       <td>Deportivo Alavés</td>
-      <td>0.651</td>
-      <td>0.187</td>
-      <td>0.162</td>
-      <td>H</td>
+      <td>34.1%</td>
+      <td>25.8%</td>
+      <td>40.1%</td>
+      <td>A</td>
+      <td>1.30</td>
+      <td>1.43</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
-      <td>Athletic Bilbao</td>
-      <td>Levante</td>
-      <td>0.464</td>
-      <td>0.236</td>
-      <td>0.300</td>
+      <td>Athletic Club</td>
+      <td>Levante UD</td>
+      <td>42.2%</td>
+      <td>26.3%</td>
+      <td>31.5%</td>
       <td>H</td>
+      <td>1.45</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Deportivo Alavés</td>
-      <td>Barcelona</td>
-      <td>0.425</td>
-      <td>0.231</td>
-      <td>0.344</td>
-      <td>D</td>
+      <td>FC Barcelona</td>
+      <td>30.3%</td>
+      <td>28.7%</td>
+      <td>41.0%</td>
+      <td>A</td>
+      <td>1.07</td>
+      <td>1.29</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Deportivo de A Coruña</td>
       <td>Atlético Madrid</td>
-      <td>0.243</td>
-      <td>0.219</td>
-      <td>0.538</td>
+      <td>30.4%</td>
+      <td>26.1%</td>
+      <td>43.5%</td>
       <td>A</td>
+      <td>1.11</td>
+      <td>1.38</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Elche</td>
       <td>Rayo Vallecano</td>
-      <td>0.430</td>
-      <td>0.237</td>
-      <td>0.333</td>
-      <td>D</td>
+      <td>33.8%</td>
+      <td>26.3%</td>
+      <td>39.9%</td>
+      <td>A</td>
+      <td>1.29</td>
+      <td>1.42</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Espanyol</td>
       <td>Villarreal</td>
-      <td>0.272</td>
-      <td>0.230</td>
-      <td>0.499</td>
-      <td>A</td>
+      <td>40.0%</td>
+      <td>23.9%</td>
+      <td>36.1%</td>
+      <td>H</td>
+      <td>1.51</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Getafe</td>
       <td>Osasuna</td>
-      <td>0.464</td>
-      <td>0.233</td>
-      <td>0.303</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>21</td>
-      <td>Racing de Santander</td>
-      <td>Celta Vigo</td>
-      <td>0.436</td>
-      <td>0.234</td>
-      <td>0.331</td>
-      <td>H</td>
+      <td>32.1%</td>
+      <td>29.7%</td>
+      <td>38.2%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Real Madrid</td>
       <td>Real Betis</td>
-      <td>0.764</td>
-      <td>0.141</td>
-      <td>0.095</td>
+      <td>43.6%</td>
+      <td>27.1%</td>
+      <td>29.3%</td>
       <td>H</td>
+      <td>1.34</td>
+      <td>1.05</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>21</td>
+      <td>Real Racing Club</td>
+      <td>Celta Vigo</td>
+      <td>36.4%</td>
+      <td>28.8%</td>
+      <td>34.8%</td>
+      <td>H</td>
+      <td>1.15</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Real Sociedad</td>
-      <td>Málaga</td>
-      <td>0.502</td>
-      <td>0.225</td>
-      <td>0.272</td>
+      <td>Málaga CF</td>
+      <td>38.5%</td>
+      <td>28.1%</td>
+      <td>33.4%</td>
       <td>H</td>
+      <td>1.21</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>21</td>
       <td>Valencia</td>
       <td>Sevilla</td>
-      <td>0.449</td>
-      <td>0.226</td>
-      <td>0.326</td>
+      <td>38.3%</td>
+      <td>28.7%</td>
+      <td>33.0%</td>
       <td>H</td>
+      <td>1.15</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Atlético Madrid</td>
       <td>Espanyol</td>
-      <td>0.748</td>
-      <td>0.148</td>
-      <td>0.104</td>
+      <td>48.4%</td>
+      <td>25.2%</td>
+      <td>26.4%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>22</td>
-      <td>Barcelona</td>
-      <td>Valencia</td>
-      <td>0.475</td>
-      <td>0.230</td>
-      <td>0.295</td>
-      <td>H</td>
+      <td>1.57</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Celta Vigo</td>
       <td>Getafe</td>
-      <td>0.486</td>
-      <td>0.231</td>
-      <td>0.282</td>
+      <td>41.9%</td>
+      <td>30.9%</td>
+      <td>27.3%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>0.86</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
-      <td>Levante</td>
-      <td>Real Sociedad</td>
-      <td>0.421</td>
-      <td>0.229</td>
-      <td>0.350</td>
-      <td>D</td>
+      <td>FC Barcelona</td>
+      <td>Valencia</td>
+      <td>48.1%</td>
+      <td>28.5%</td>
+      <td>23.3%</td>
+      <td>H</td>
+      <td>1.33</td>
+      <td>0.83</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
-      <td>Málaga</td>
+      <td>Levante UD</td>
+      <td>Real Sociedad</td>
+      <td>35.5%</td>
+      <td>28.6%</td>
+      <td>35.9%</td>
+      <td>A</td>
+      <td>1.16</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>22</td>
+      <td>Málaga CF</td>
       <td>Deportivo Alavés</td>
-      <td>0.502</td>
-      <td>0.224</td>
-      <td>0.274</td>
-      <td>H</td>
+      <td>29.2%</td>
+      <td>28.4%</td>
+      <td>42.4%</td>
+      <td>A</td>
+      <td>1.04</td>
+      <td>1.30</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Osasuna</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.440</td>
-      <td>0.234</td>
-      <td>0.327</td>
+      <td>39.1%</td>
+      <td>29.6%</td>
+      <td>31.2%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Rayo Vallecano</td>
       <td>Real Madrid</td>
-      <td>0.127</td>
-      <td>0.171</td>
-      <td>0.702</td>
+      <td>24.2%</td>
+      <td>25.0%</td>
+      <td>50.8%</td>
       <td>A</td>
+      <td>1.01</td>
+      <td>1.60</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Real Betis</td>
       <td>Elche</td>
-      <td>0.596</td>
-      <td>0.206</td>
-      <td>0.198</td>
+      <td>57.5%</td>
+      <td>23.1%</td>
+      <td>19.4%</td>
       <td>H</td>
+      <td>1.74</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Sevilla</td>
-      <td>Athletic Bilbao</td>
-      <td>0.463</td>
-      <td>0.235</td>
-      <td>0.302</td>
+      <td>Athletic Club</td>
+      <td>43.6%</td>
+      <td>24.8%</td>
+      <td>31.6%</td>
       <td>H</td>
+      <td>1.53</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>22</td>
       <td>Villarreal</td>
-      <td>Racing de Santander</td>
-      <td>0.596</td>
-      <td>0.206</td>
-      <td>0.198</td>
+      <td>Real Racing Club</td>
+      <td>41.3%</td>
+      <td>24.0%</td>
+      <td>34.7%</td>
       <td>H</td>
+      <td>1.56</td>
+      <td>1.41</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Osasuna</td>
-      <td>0.483</td>
-      <td>0.226</td>
-      <td>0.291</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>23</td>
-      <td>Barcelona</td>
-      <td>Atlético Madrid</td>
-      <td>0.245</td>
-      <td>0.218</td>
-      <td>0.537</td>
+      <td>35.2%</td>
+      <td>27.9%</td>
+      <td>36.9%</td>
       <td>A</td>
+      <td>1.16</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Deportivo Alavés</td>
       <td>Celta Vigo</td>
-      <td>0.395</td>
-      <td>0.235</td>
-      <td>0.370</td>
-      <td>D</td>
+      <td>40.6%</td>
+      <td>30.4%</td>
+      <td>29.0%</td>
+      <td>H</td>
+      <td>1.15</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Deportivo de A Coruña</td>
-      <td>Málaga</td>
-      <td>0.459</td>
-      <td>0.234</td>
-      <td>0.306</td>
+      <td>Málaga CF</td>
+      <td>41.0%</td>
+      <td>28.7%</td>
+      <td>30.3%</td>
       <td>H</td>
+      <td>1.28</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Elche</td>
-      <td>Levante</td>
-      <td>0.441</td>
-      <td>0.233</td>
-      <td>0.326</td>
-      <td>H</td>
+      <td>Levante UD</td>
+      <td>33.6%</td>
+      <td>26.1%</td>
+      <td>40.3%</td>
+      <td>A</td>
+      <td>1.27</td>
+      <td>1.41</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Espanyol</td>
       <td>Rayo Vallecano</td>
-      <td>0.379</td>
-      <td>0.240</td>
-      <td>0.382</td>
-      <td>D</td>
+      <td>43.4%</td>
+      <td>25.9%</td>
+      <td>30.6%</td>
+      <td>H</td>
+      <td>1.42</td>
+      <td>1.13</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>23</td>
+      <td>FC Barcelona</td>
+      <td>Atlético Madrid</td>
+      <td>45.0%</td>
+      <td>25.5%</td>
+      <td>29.4%</td>
+      <td>H</td>
+      <td>1.44</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Getafe</td>
       <td>Villarreal</td>
-      <td>0.314</td>
-      <td>0.237</td>
-      <td>0.449</td>
+      <td>34.0%</td>
+      <td>26.3%</td>
+      <td>39.6%</td>
       <td>A</td>
+      <td>1.26</td>
+      <td>1.40</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Real Betis</td>
       <td>Sevilla</td>
-      <td>0.581</td>
-      <td>0.206</td>
-      <td>0.213</td>
+      <td>44.1%</td>
+      <td>26.9%</td>
+      <td>29.0%</td>
       <td>H</td>
+      <td>1.41</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Real Sociedad</td>
       <td>Real Madrid</td>
-      <td>0.143</td>
-      <td>0.175</td>
-      <td>0.682</td>
+      <td>24.4%</td>
+      <td>26.4%</td>
+      <td>49.2%</td>
       <td>A</td>
+      <td>0.99</td>
+      <td>1.49</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>23</td>
       <td>Valencia</td>
-      <td>Racing de Santander</td>
-      <td>0.438</td>
-      <td>0.238</td>
-      <td>0.324</td>
+      <td>Real Racing Club</td>
+      <td>38.4%</td>
+      <td>29.3%</td>
+      <td>32.2%</td>
       <td>H</td>
+      <td>1.16</td>
+      <td>1.04</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Celta Vigo</td>
       <td>Rayo Vallecano</td>
-      <td>0.461</td>
-      <td>0.230</td>
-      <td>0.310</td>
+      <td>43.3%</td>
+      <td>28.9%</td>
+      <td>27.8%</td>
       <td>H</td>
+      <td>1.24</td>
+      <td>0.95</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Elche</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.443</td>
-      <td>0.237</td>
-      <td>0.320</td>
-      <td>H</td>
+      <td>29.6%</td>
+      <td>26.6%</td>
+      <td>43.9%</td>
+      <td>A</td>
+      <td>1.16</td>
+      <td>1.46</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
-      <td>Levante</td>
-      <td>Málaga</td>
-      <td>0.450</td>
-      <td>0.234</td>
-      <td>0.316</td>
-      <td>H</td>
+      <td>Levante UD</td>
+      <td>Málaga CF</td>
+      <td>35.9%</td>
+      <td>28.0%</td>
+      <td>36.1%</td>
+      <td>A</td>
+      <td>1.18</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Osasuna</td>
       <td>Atlético Madrid</td>
-      <td>0.219</td>
-      <td>0.212</td>
-      <td>0.569</td>
+      <td>30.5%</td>
+      <td>28.4%</td>
+      <td>41.1%</td>
       <td>A</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>24</td>
-      <td>Racing de Santander</td>
-      <td>Getafe</td>
-      <td>0.473</td>
-      <td>0.234</td>
-      <td>0.293</td>
-      <td>H</td>
+      <td>1.01</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Real Madrid</td>
-      <td>Athletic Bilbao</td>
-      <td>0.834</td>
-      <td>0.108</td>
-      <td>0.058</td>
+      <td>Athletic Club</td>
+      <td>56.1%</td>
+      <td>22.6%</td>
+      <td>21.3%</td>
       <td>H</td>
+      <td>1.82</td>
+      <td>1.03</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>24</td>
+      <td>Real Racing Club</td>
+      <td>Getafe</td>
+      <td>44.5%</td>
+      <td>27.3%</td>
+      <td>28.2%</td>
+      <td>H</td>
+      <td>1.38</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Real Sociedad</td>
       <td>Real Betis</td>
-      <td>0.385</td>
-      <td>0.239</td>
-      <td>0.376</td>
-      <td>D</td>
+      <td>28.3%</td>
+      <td>28.7%</td>
+      <td>43.0%</td>
+      <td>A</td>
+      <td>0.97</td>
+      <td>1.27</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Sevilla</td>
       <td>Espanyol</td>
-      <td>0.528</td>
-      <td>0.218</td>
-      <td>0.254</td>
+      <td>40.6%</td>
+      <td>25.4%</td>
+      <td>34.0%</td>
       <td>H</td>
+      <td>1.39</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Valencia</td>
       <td>Deportivo Alavés</td>
-      <td>0.483</td>
-      <td>0.233</td>
-      <td>0.283</td>
-      <td>H</td>
+      <td>32.0%</td>
+      <td>30.6%</td>
+      <td>37.4%</td>
+      <td>A</td>
+      <td>0.97</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>24</td>
       <td>Villarreal</td>
-      <td>Barcelona</td>
-      <td>0.603</td>
-      <td>0.200</td>
-      <td>0.197</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>26.7%</td>
+      <td>24.3%</td>
+      <td>49.0%</td>
+      <td>A</td>
+      <td>1.20</td>
+      <td>1.69</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Celta Vigo</td>
-      <td>0.438</td>
-      <td>0.237</td>
-      <td>0.325</td>
-      <td>H</td>
+      <td>34.0%</td>
+      <td>28.9%</td>
+      <td>37.1%</td>
+      <td>A</td>
+      <td>1.12</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Atlético Madrid</td>
       <td>Elche</td>
-      <td>0.702</td>
-      <td>0.169</td>
-      <td>0.129</td>
+      <td>59.9%</td>
+      <td>21.4%</td>
+      <td>18.7%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>25</td>
-      <td>Barcelona</td>
-      <td>Levante</td>
-      <td>0.461</td>
-      <td>0.227</td>
-      <td>0.312</td>
-      <td>H</td>
+      <td>1.93</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Deportivo Alavés</td>
-      <td>Racing de Santander</td>
-      <td>0.418</td>
-      <td>0.236</td>
-      <td>0.345</td>
-      <td>D</td>
+      <td>Real Racing Club</td>
+      <td>44.0%</td>
+      <td>26.4%</td>
+      <td>29.6%</td>
+      <td>H</td>
+      <td>1.38</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Deportivo de A Coruña</td>
       <td>Real Sociedad</td>
-      <td>0.416</td>
-      <td>0.235</td>
-      <td>0.348</td>
-      <td>D</td>
+      <td>39.7%</td>
+      <td>28.6%</td>
+      <td>31.7%</td>
+      <td>H</td>
+      <td>1.22</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Espanyol</td>
       <td>Osasuna</td>
-      <td>0.427</td>
-      <td>0.230</td>
-      <td>0.343</td>
-      <td>D</td>
+      <td>38.1%</td>
+      <td>29.0%</td>
+      <td>32.9%</td>
+      <td>H</td>
+      <td>1.17</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
-      <td>Málaga</td>
+      <td>FC Barcelona</td>
+      <td>Levante UD</td>
+      <td>59.0%</td>
+      <td>23.4%</td>
+      <td>17.6%</td>
+      <td>H</td>
+      <td>1.75</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>25</td>
+      <td>Málaga CF</td>
       <td>Real Betis</td>
-      <td>0.346</td>
-      <td>0.235</td>
-      <td>0.418</td>
-      <td>D</td>
+      <td>28.1%</td>
+      <td>27.5%</td>
+      <td>44.4%</td>
+      <td>A</td>
+      <td>0.99</td>
+      <td>1.33</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Rayo Vallecano</td>
       <td>Getafe</td>
-      <td>0.496</td>
-      <td>0.225</td>
-      <td>0.278</td>
+      <td>39.5%</td>
+      <td>28.1%</td>
+      <td>32.4%</td>
       <td>H</td>
+      <td>1.22</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Sevilla</td>
       <td>Real Madrid</td>
-      <td>0.108</td>
-      <td>0.160</td>
-      <td>0.732</td>
+      <td>28.1%</td>
+      <td>25.5%</td>
+      <td>46.3%</td>
       <td>A</td>
+      <td>1.15</td>
+      <td>1.54</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>25</td>
       <td>Villarreal</td>
       <td>Valencia</td>
-      <td>0.625</td>
-      <td>0.192</td>
-      <td>0.183</td>
+      <td>37.1%</td>
+      <td>27.5%</td>
+      <td>35.3%</td>
       <td>H</td>
+      <td>1.23</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
-      <td>Athletic Bilbao</td>
-      <td>Barcelona</td>
-      <td>0.458</td>
-      <td>0.231</td>
-      <td>0.311</td>
-      <td>H</td>
+      <td>Athletic Club</td>
+      <td>FC Barcelona</td>
+      <td>23.7%</td>
+      <td>23.8%</td>
+      <td>52.5%</td>
+      <td>A</td>
+      <td>1.03</td>
+      <td>1.67</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Celta Vigo</td>
       <td>Espanyol</td>
-      <td>0.537</td>
-      <td>0.216</td>
-      <td>0.247</td>
+      <td>39.3%</td>
+      <td>28.2%</td>
+      <td>32.5%</td>
       <td>H</td>
+      <td>1.17</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Getafe</td>
       <td>Deportivo Alavés</td>
-      <td>0.500</td>
-      <td>0.222</td>
-      <td>0.277</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>26</td>
-      <td>Levante</td>
-      <td>Deportivo de A Coruña</td>
-      <td>0.448</td>
-      <td>0.236</td>
-      <td>0.316</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>26</td>
-      <td>Málaga</td>
-      <td>Atlético Madrid</td>
-      <td>0.241</td>
-      <td>0.212</td>
-      <td>0.547</td>
+      <td>28.1%</td>
+      <td>28.6%</td>
+      <td>43.4%</td>
       <td>A</td>
+      <td>0.96</td>
+      <td>1.26</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>26</td>
+      <td>Levante UD</td>
+      <td>Deportivo de A Coruña</td>
+      <td>33.7%</td>
+      <td>27.5%</td>
+      <td>38.8%</td>
+      <td>A</td>
+      <td>1.12</td>
+      <td>1.23</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>26</td>
+      <td>Málaga CF</td>
+      <td>Atlético Madrid</td>
+      <td>28.2%</td>
+      <td>26.3%</td>
+      <td>45.5%</td>
+      <td>A</td>
+      <td>1.08</td>
+      <td>1.45</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Osasuna</td>
       <td>Sevilla</td>
-      <td>0.444</td>
-      <td>0.226</td>
-      <td>0.330</td>
+      <td>38.4%</td>
+      <td>28.1%</td>
+      <td>33.5%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>26</td>
-      <td>Racing de Santander</td>
-      <td>Rayo Vallecano</td>
-      <td>0.443</td>
-      <td>0.236</td>
-      <td>0.321</td>
-      <td>H</td>
+      <td>1.21</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Real Betis</td>
       <td>Villarreal</td>
-      <td>0.439</td>
-      <td>0.232</td>
-      <td>0.329</td>
+      <td>46.8%</td>
+      <td>25.4%</td>
+      <td>27.9%</td>
       <td>H</td>
+      <td>1.55</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Real Madrid</td>
       <td>Valencia</td>
-      <td>0.847</td>
-      <td>0.097</td>
-      <td>0.056</td>
+      <td>48.8%</td>
+      <td>27.1%</td>
+      <td>24.1%</td>
       <td>H</td>
+      <td>1.37</td>
+      <td>0.87</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>26</td>
+      <td>Real Racing Club</td>
+      <td>Rayo Vallecano</td>
+      <td>44.4%</td>
+      <td>25.6%</td>
+      <td>30.0%</td>
+      <td>H</td>
+      <td>1.46</td>
+      <td>1.15</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>26</td>
       <td>Real Sociedad</td>
       <td>Elche</td>
-      <td>0.516</td>
-      <td>0.228</td>
-      <td>0.256</td>
+      <td>46.2%</td>
+      <td>25.9%</td>
+      <td>27.9%</td>
       <td>H</td>
+      <td>1.47</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Atlético Madrid</td>
       <td>Celta Vigo</td>
-      <td>0.681</td>
-      <td>0.179</td>
-      <td>0.139</td>
+      <td>44.3%</td>
+      <td>27.9%</td>
+      <td>27.8%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>27</td>
-      <td>Barcelona</td>
-      <td>Real Betis</td>
-      <td>0.336</td>
-      <td>0.243</td>
-      <td>0.422</td>
-      <td>D</td>
+      <td>1.30</td>
+      <td>0.97</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Deportivo Alavés</td>
-      <td>Athletic Bilbao</td>
-      <td>0.417</td>
-      <td>0.239</td>
-      <td>0.345</td>
-      <td>D</td>
+      <td>Athletic Club</td>
+      <td>47.8%</td>
+      <td>25.4%</td>
+      <td>26.9%</td>
+      <td>H</td>
+      <td>1.50</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Deportivo de A Coruña</td>
       <td>Getafe</td>
-      <td>0.480</td>
-      <td>0.231</td>
-      <td>0.289</td>
+      <td>41.8%</td>
+      <td>29.1%</td>
+      <td>29.1%</td>
       <td>H</td>
+      <td>1.24</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Elche</td>
-      <td>Málaga</td>
-      <td>0.445</td>
-      <td>0.232</td>
-      <td>0.323</td>
-      <td>H</td>
+      <td>Málaga CF</td>
+      <td>32.2%</td>
+      <td>25.8%</td>
+      <td>42.0%</td>
+      <td>A</td>
+      <td>1.22</td>
+      <td>1.43</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Espanyol</td>
-      <td>Racing de Santander</td>
-      <td>0.400</td>
-      <td>0.241</td>
-      <td>0.359</td>
-      <td>D</td>
+      <td>Real Racing Club</td>
+      <td>39.7%</td>
+      <td>26.2%</td>
+      <td>34.2%</td>
+      <td>H</td>
+      <td>1.37</td>
+      <td>1.27</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>27</td>
+      <td>FC Barcelona</td>
+      <td>Real Betis</td>
+      <td>44.4%</td>
+      <td>28.1%</td>
+      <td>27.6%</td>
+      <td>H</td>
+      <td>1.36</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Rayo Vallecano</td>
       <td>Osasuna</td>
-      <td>0.495</td>
-      <td>0.231</td>
-      <td>0.274</td>
-      <td>H</td>
+      <td>33.4%</td>
+      <td>29.1%</td>
+      <td>37.5%</td>
+      <td>A</td>
+      <td>1.06</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Sevilla</td>
       <td>Real Sociedad</td>
-      <td>0.417</td>
-      <td>0.233</td>
-      <td>0.349</td>
-      <td>D</td>
+      <td>43.1%</td>
+      <td>25.6%</td>
+      <td>31.3%</td>
+      <td>H</td>
+      <td>1.36</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Valencia</td>
-      <td>Levante</td>
-      <td>0.446</td>
-      <td>0.231</td>
-      <td>0.323</td>
+      <td>Levante UD</td>
+      <td>42.6%</td>
+      <td>29.9%</td>
+      <td>27.5%</td>
       <td>H</td>
+      <td>1.21</td>
+      <td>0.91</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>27</td>
       <td>Villarreal</td>
       <td>Real Madrid</td>
-      <td>0.212</td>
-      <td>0.203</td>
-      <td>0.585</td>
+      <td>28.8%</td>
+      <td>23.7%</td>
+      <td>47.5%</td>
       <td>A</td>
+      <td>1.27</td>
+      <td>1.70</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Valencia</td>
-      <td>0.483</td>
-      <td>0.229</td>
-      <td>0.288</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>28</td>
-      <td>Barcelona</td>
-      <td>Deportivo de A Coruña</td>
-      <td>0.460</td>
-      <td>0.227</td>
-      <td>0.313</td>
-      <td>H</td>
+      <td>34.2%</td>
+      <td>28.2%</td>
+      <td>37.5%</td>
+      <td>A</td>
+      <td>1.11</td>
+      <td>1.17</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Deportivo Alavés</td>
       <td>Sevilla</td>
-      <td>0.425</td>
-      <td>0.230</td>
-      <td>0.345</td>
-      <td>D</td>
+      <td>44.0%</td>
+      <td>26.9%</td>
+      <td>29.2%</td>
+      <td>H</td>
+      <td>1.41</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Elche</td>
       <td>Villarreal</td>
-      <td>0.310</td>
-      <td>0.233</td>
-      <td>0.457</td>
+      <td>28.3%</td>
+      <td>22.8%</td>
+      <td>48.9%</td>
       <td>A</td>
+      <td>1.31</td>
+      <td>1.78</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>28</td>
+      <td>FC Barcelona</td>
+      <td>Deportivo de A Coruña</td>
+      <td>53.4%</td>
+      <td>25.0%</td>
+      <td>21.5%</td>
+      <td>H</td>
+      <td>1.58</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Getafe</td>
       <td>Real Sociedad</td>
-      <td>0.411</td>
-      <td>0.235</td>
-      <td>0.354</td>
-      <td>D</td>
+      <td>35.0%</td>
+      <td>29.5%</td>
+      <td>35.5%</td>
+      <td>A</td>
+      <td>1.08</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Rayo Vallecano</td>
-      <td>0.444</td>
-      <td>0.226</td>
-      <td>0.330</td>
+      <td>39.7%</td>
+      <td>27.7%</td>
+      <td>32.7%</td>
       <td>H</td>
+      <td>1.27</td>
+      <td>1.14</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Osasuna</td>
       <td>Celta Vigo</td>
-      <td>0.409</td>
-      <td>0.239</td>
-      <td>0.352</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>28</td>
-      <td>Racing de Santander</td>
-      <td>Atlético Madrid</td>
-      <td>0.238</td>
-      <td>0.215</td>
-      <td>0.546</td>
-      <td>A</td>
+      <td>35.2%</td>
+      <td>31.9%</td>
+      <td>32.8%</td>
+      <td>H</td>
+      <td>0.98</td>
+      <td>0.94</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Real Betis</td>
-      <td>Levante</td>
-      <td>0.578</td>
-      <td>0.210</td>
-      <td>0.212</td>
+      <td>Levante UD</td>
+      <td>50.5%</td>
+      <td>26.6%</td>
+      <td>22.9%</td>
       <td>H</td>
+      <td>1.49</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>28</td>
       <td>Real Madrid</td>
       <td>Espanyol</td>
-      <td>0.874</td>
-      <td>0.087</td>
-      <td>0.039</td>
+      <td>51.5%</td>
+      <td>24.7%</td>
+      <td>23.8%</td>
       <td>H</td>
+      <td>1.61</td>
+      <td>1.01</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>28</td>
+      <td>Real Racing Club</td>
+      <td>Atlético Madrid</td>
+      <td>31.6%</td>
+      <td>25.8%</td>
+      <td>42.6%</td>
+      <td>A</td>
+      <td>1.21</td>
+      <td>1.44</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Atlético Madrid</td>
       <td>Getafe</td>
-      <td>0.706</td>
-      <td>0.168</td>
-      <td>0.127</td>
+      <td>52.6%</td>
+      <td>25.4%</td>
+      <td>22.1%</td>
       <td>H</td>
+      <td>1.54</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Celta Vigo</td>
       <td>Real Madrid</td>
-      <td>0.132</td>
-      <td>0.164</td>
-      <td>0.704</td>
+      <td>27.8%</td>
+      <td>28.4%</td>
+      <td>43.8%</td>
       <td>A</td>
+      <td>0.94</td>
+      <td>1.26</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Espanyol</td>
-      <td>Athletic Bilbao</td>
-      <td>0.404</td>
-      <td>0.236</td>
-      <td>0.359</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>29</td>
-      <td>Levante</td>
-      <td>Osasuna</td>
-      <td>0.479</td>
-      <td>0.227</td>
-      <td>0.293</td>
+      <td>Athletic Club</td>
+      <td>42.5%</td>
+      <td>25.5%</td>
+      <td>32.0%</td>
       <td>H</td>
+      <td>1.47</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
-      <td>Racing de Santander</td>
-      <td>Real Betis</td>
-      <td>0.339</td>
-      <td>0.233</td>
-      <td>0.428</td>
-      <td>D</td>
+      <td>Levante UD</td>
+      <td>Osasuna</td>
+      <td>32.0%</td>
+      <td>29.0%</td>
+      <td>39.1%</td>
+      <td>A</td>
+      <td>1.03</td>
+      <td>1.16</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Rayo Vallecano</td>
-      <td>Barcelona</td>
-      <td>0.473</td>
-      <td>0.235</td>
-      <td>0.291</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>22.5%</td>
+      <td>24.6%</td>
+      <td>52.9%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.61</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>29</td>
+      <td>Real Racing Club</td>
+      <td>Real Betis</td>
+      <td>32.1%</td>
+      <td>27.2%</td>
+      <td>40.8%</td>
+      <td>A</td>
+      <td>1.13</td>
+      <td>1.32</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Real Sociedad</td>
       <td>Deportivo Alavés</td>
-      <td>0.552</td>
-      <td>0.213</td>
-      <td>0.234</td>
-      <td>H</td>
+      <td>30.4%</td>
+      <td>28.1%</td>
+      <td>41.4%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Sevilla</td>
       <td>Elche</td>
-      <td>0.469</td>
-      <td>0.235</td>
-      <td>0.295</td>
+      <td>51.3%</td>
+      <td>23.6%</td>
+      <td>25.1%</td>
       <td>H</td>
+      <td>1.75</td>
+      <td>1.15</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Valencia</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.438</td>
-      <td>0.231</td>
-      <td>0.331</td>
+      <td>38.7%</td>
+      <td>30.6%</td>
+      <td>30.7%</td>
       <td>H</td>
+      <td>1.09</td>
+      <td>0.94</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>29</td>
       <td>Villarreal</td>
-      <td>Málaga</td>
-      <td>0.609</td>
-      <td>0.197</td>
-      <td>0.194</td>
+      <td>Málaga CF</td>
+      <td>44.0%</td>
+      <td>24.3%</td>
+      <td>31.7%</td>
       <td>H</td>
+      <td>1.54</td>
+      <td>1.25</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
-      <td>Athletic Bilbao</td>
-      <td>Racing de Santander</td>
-      <td>0.462</td>
-      <td>0.234</td>
-      <td>0.304</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>30</td>
-      <td>Barcelona</td>
-      <td>Sevilla</td>
-      <td>0.464</td>
-      <td>0.232</td>
-      <td>0.304</td>
-      <td>H</td>
+      <td>Athletic Club</td>
+      <td>Real Racing Club</td>
+      <td>36.9%</td>
+      <td>25.7%</td>
+      <td>37.5%</td>
+      <td>A</td>
+      <td>1.38</td>
+      <td>1.38</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Deportivo de A Coruña</td>
       <td>Villarreal</td>
-      <td>0.325</td>
-      <td>0.235</td>
-      <td>0.440</td>
-      <td>A</td>
+      <td>38.6%</td>
+      <td>25.2%</td>
+      <td>36.2%</td>
+      <td>H</td>
+      <td>1.40</td>
+      <td>1.34</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Elche</td>
       <td>Deportivo Alavés</td>
-      <td>0.499</td>
-      <td>0.225</td>
-      <td>0.276</td>
+      <td>23.9%</td>
+      <td>25.0%</td>
+      <td>51.1%</td>
+      <td>A</td>
+      <td>1.02</td>
+      <td>1.61</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>30</td>
+      <td>FC Barcelona</td>
+      <td>Sevilla</td>
+      <td>53.1%</td>
+      <td>24.5%</td>
+      <td>22.4%</td>
       <td>H</td>
+      <td>1.67</td>
+      <td>1.00</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Getafe</td>
       <td>Espanyol</td>
-      <td>0.508</td>
-      <td>0.225</td>
-      <td>0.267</td>
-      <td>H</td>
+      <td>32.9%</td>
+      <td>28.2%</td>
+      <td>38.9%</td>
+      <td>A</td>
+      <td>1.11</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Rayo Vallecano</td>
-      <td>0.450</td>
-      <td>0.232</td>
-      <td>0.318</td>
+      <td>37.6%</td>
+      <td>27.5%</td>
+      <td>34.9%</td>
       <td>H</td>
+      <td>1.26</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Osasuna</td>
-      <td>0.479</td>
-      <td>0.230</td>
-      <td>0.291</td>
-      <td>H</td>
+      <td>33.4%</td>
+      <td>30.0%</td>
+      <td>36.6%</td>
+      <td>A</td>
+      <td>1.03</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Real Betis</td>
       <td>Celta Vigo</td>
-      <td>0.560</td>
-      <td>0.221</td>
-      <td>0.219</td>
+      <td>42.5%</td>
+      <td>29.7%</td>
+      <td>27.8%</td>
       <td>H</td>
+      <td>1.17</td>
+      <td>0.88</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Real Madrid</td>
       <td>Atlético Madrid</td>
-      <td>0.647</td>
-      <td>0.192</td>
-      <td>0.161</td>
+      <td>43.9%</td>
+      <td>25.1%</td>
+      <td>31.0%</td>
       <td>H</td>
+      <td>1.47</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>30</td>
       <td>Real Sociedad</td>
       <td>Valencia</td>
-      <td>0.528</td>
-      <td>0.224</td>
-      <td>0.248</td>
-      <td>H</td>
+      <td>34.3%</td>
+      <td>30.3%</td>
+      <td>35.4%</td>
+      <td>A</td>
+      <td>1.00</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Atlético Madrid</td>
-      <td>Levante</td>
-      <td>0.699</td>
-      <td>0.169</td>
-      <td>0.132</td>
+      <td>Levante UD</td>
+      <td>53.6%</td>
+      <td>24.4%</td>
+      <td>21.9%</td>
       <td>H</td>
+      <td>1.64</td>
+      <td>0.97</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Celta Vigo</td>
       <td>Elche</td>
-      <td>0.491</td>
-      <td>0.227</td>
-      <td>0.282</td>
+      <td>50.4%</td>
+      <td>25.7%</td>
+      <td>23.9%</td>
       <td>H</td>
+      <td>1.48</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Deportivo Alavés</td>
       <td>Real Betis</td>
-      <td>0.310</td>
-      <td>0.226</td>
-      <td>0.464</td>
-      <td>A</td>
+      <td>36.2%</td>
+      <td>28.8%</td>
+      <td>35.1%</td>
+      <td>H</td>
+      <td>1.12</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Espanyol</td>
-      <td>Málaga</td>
-      <td>0.403</td>
-      <td>0.234</td>
-      <td>0.363</td>
-      <td>D</td>
+      <td>Málaga CF</td>
+      <td>42.0%</td>
+      <td>26.9%</td>
+      <td>31.0%</td>
+      <td>H</td>
+      <td>1.36</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Osasuna</td>
       <td>Real Madrid</td>
-      <td>0.108</td>
-      <td>0.154</td>
-      <td>0.737</td>
+      <td>28.3%</td>
+      <td>27.4%</td>
+      <td>44.3%</td>
       <td>A</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>31</td>
-      <td>Racing de Santander</td>
-      <td>Barcelona</td>
-      <td>0.465</td>
-      <td>0.225</td>
-      <td>0.310</td>
-      <td>H</td>
+      <td>0.98</td>
+      <td>1.31</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Rayo Vallecano</td>
       <td>Real Sociedad</td>
-      <td>0.443</td>
-      <td>0.230</td>
-      <td>0.327</td>
+      <td>37.1%</td>
+      <td>27.6%</td>
+      <td>35.4%</td>
       <td>H</td>
+      <td>1.20</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>31</td>
+      <td>Real Racing Club</td>
+      <td>FC Barcelona</td>
+      <td>26.4%</td>
+      <td>25.4%</td>
+      <td>48.2%</td>
+      <td>A</td>
+      <td>1.08</td>
+      <td>1.55</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Sevilla</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.453</td>
-      <td>0.236</td>
-      <td>0.311</td>
+      <td>40.9%</td>
+      <td>26.3%</td>
+      <td>32.8%</td>
       <td>H</td>
+      <td>1.35</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Valencia</td>
       <td>Getafe</td>
-      <td>0.452</td>
-      <td>0.240</td>
-      <td>0.308</td>
+      <td>42.3%</td>
+      <td>30.6%</td>
+      <td>27.2%</td>
       <td>H</td>
+      <td>1.14</td>
+      <td>0.86</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>31</td>
       <td>Villarreal</td>
-      <td>Athletic Bilbao</td>
-      <td>0.605</td>
-      <td>0.198</td>
-      <td>0.197</td>
+      <td>Athletic Club</td>
+      <td>45.5%</td>
+      <td>23.8%</td>
+      <td>30.6%</td>
       <td>H</td>
+      <td>1.69</td>
+      <td>1.36</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Atlético Madrid</td>
       <td>Sevilla</td>
-      <td>0.694</td>
-      <td>0.170</td>
-      <td>0.136</td>
+      <td>47.5%</td>
+      <td>25.0%</td>
+      <td>27.5%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>32</td>
-      <td>Barcelona</td>
-      <td>Espanyol</td>
-      <td>0.521</td>
-      <td>0.223</td>
-      <td>0.256</td>
-      <td>H</td>
+      <td>1.55</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Deportivo Alavés</td>
       <td>Rayo Vallecano</td>
-      <td>0.395</td>
-      <td>0.245</td>
-      <td>0.360</td>
-      <td>D</td>
+      <td>48.0%</td>
+      <td>26.6%</td>
+      <td>25.4%</td>
+      <td>H</td>
+      <td>1.44</td>
+      <td>0.96</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Deportivo de A Coruña</td>
       <td>Celta Vigo</td>
-      <td>0.443</td>
-      <td>0.233</td>
-      <td>0.324</td>
+      <td>35.6%</td>
+      <td>29.7%</td>
+      <td>34.7%</td>
       <td>H</td>
+      <td>1.05</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Elche</td>
       <td>Osasuna</td>
-      <td>0.468</td>
-      <td>0.232</td>
-      <td>0.301</td>
+      <td>28.3%</td>
+      <td>27.0%</td>
+      <td>44.7%</td>
+      <td>A</td>
+      <td>1.03</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>32</td>
+      <td>FC Barcelona</td>
+      <td>Espanyol</td>
+      <td>52.6%</td>
+      <td>24.8%</td>
+      <td>22.7%</td>
       <td>H</td>
+      <td>1.62</td>
+      <td>0.96</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Getafe</td>
       <td>Real Madrid</td>
-      <td>0.108</td>
-      <td>0.153</td>
-      <td>0.739</td>
+      <td>22.5%</td>
+      <td>25.8%</td>
+      <td>51.7%</td>
       <td>A</td>
+      <td>0.91</td>
+      <td>1.53</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Villarreal</td>
-      <td>0.318</td>
-      <td>0.236</td>
-      <td>0.446</td>
+      <td>34.0%</td>
+      <td>24.9%</td>
+      <td>41.1%</td>
       <td>A</td>
+      <td>1.34</td>
+      <td>1.49</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Valencia</td>
-      <td>0.490</td>
-      <td>0.227</td>
-      <td>0.283</td>
-      <td>H</td>
+      <td>33.0%</td>
+      <td>29.9%</td>
+      <td>37.0%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Real Betis</td>
-      <td>Athletic Bilbao</td>
-      <td>0.581</td>
-      <td>0.208</td>
-      <td>0.211</td>
+      <td>Athletic Club</td>
+      <td>49.3%</td>
+      <td>25.7%</td>
+      <td>24.9%</td>
       <td>H</td>
+      <td>1.53</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>32</td>
       <td>Real Sociedad</td>
-      <td>Racing de Santander</td>
-      <td>0.505</td>
-      <td>0.225</td>
-      <td>0.270</td>
-      <td>H</td>
+      <td>Real Racing Club</td>
+      <td>35.5%</td>
+      <td>27.5%</td>
+      <td>37.0%</td>
+      <td>A</td>
+      <td>1.21</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.454</td>
-      <td>0.230</td>
-      <td>0.316</td>
+      <td>37.2%</td>
+      <td>26.4%</td>
+      <td>36.4%</td>
       <td>H</td>
+      <td>1.28</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Celta Vigo</td>
-      <td>Barcelona</td>
-      <td>0.471</td>
-      <td>0.234</td>
-      <td>0.295</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>26.4%</td>
+      <td>28.6%</td>
+      <td>45.0%</td>
+      <td>A</td>
+      <td>0.91</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Espanyol</td>
       <td>Real Sociedad</td>
-      <td>0.360</td>
-      <td>0.236</td>
-      <td>0.404</td>
-      <td>D</td>
+      <td>40.9%</td>
+      <td>27.9%</td>
+      <td>31.2%</td>
+      <td>H</td>
+      <td>1.30</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Getafe</td>
       <td>Real Betis</td>
-      <td>0.331</td>
-      <td>0.234</td>
-      <td>0.435</td>
+      <td>26.2%</td>
+      <td>27.9%</td>
+      <td>45.8%</td>
       <td>A</td>
+      <td>0.91</td>
+      <td>1.29</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Osasuna</td>
       <td>Deportivo Alavés</td>
-      <td>0.486</td>
-      <td>0.225</td>
-      <td>0.289</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>33</td>
-      <td>Racing de Santander</td>
-      <td>Málaga</td>
-      <td>0.462</td>
-      <td>0.238</td>
-      <td>0.299</td>
-      <td>H</td>
+      <td>32.6%</td>
+      <td>29.6%</td>
+      <td>37.9%</td>
+      <td>A</td>
+      <td>0.99</td>
+      <td>1.09</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Real Madrid</td>
       <td>Elche</td>
-      <td>0.839</td>
-      <td>0.109</td>
-      <td>0.052</td>
+      <td>63.6%</td>
+      <td>20.2%</td>
+      <td>16.3%</td>
       <td>H</td>
+      <td>2.04</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>33</td>
+      <td>Real Racing Club</td>
+      <td>Málaga CF</td>
+      <td>43.4%</td>
+      <td>25.5%</td>
+      <td>31.1%</td>
+      <td>H</td>
+      <td>1.39</td>
+      <td>1.13</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Sevilla</td>
-      <td>Levante</td>
-      <td>0.456</td>
-      <td>0.230</td>
-      <td>0.314</td>
+      <td>Levante UD</td>
+      <td>46.2%</td>
+      <td>25.3%</td>
+      <td>28.5%</td>
       <td>H</td>
+      <td>1.48</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Valencia</td>
       <td>Rayo Vallecano</td>
-      <td>0.430</td>
-      <td>0.233</td>
-      <td>0.337</td>
-      <td>D</td>
+      <td>41.8%</td>
+      <td>29.4%</td>
+      <td>28.8%</td>
+      <td>H</td>
+      <td>1.20</td>
+      <td>0.95</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>33</td>
       <td>Villarreal</td>
       <td>Atlético Madrid</td>
-      <td>0.365</td>
-      <td>0.230</td>
-      <td>0.405</td>
-      <td>D</td>
+      <td>32.8%</td>
+      <td>23.8%</td>
+      <td>43.4%</td>
+      <td>A</td>
+      <td>1.36</td>
+      <td>1.60</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Atlético Madrid</td>
       <td>Deportivo Alavés</td>
-      <td>0.732</td>
-      <td>0.155</td>
-      <td>0.113</td>
+      <td>41.2%</td>
+      <td>27.2%</td>
+      <td>31.6%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>34</td>
-      <td>Barcelona</td>
-      <td>Osasuna</td>
-      <td>0.492</td>
-      <td>0.224</td>
-      <td>0.284</td>
-      <td>H</td>
+      <td>1.30</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Celta Vigo</td>
       <td>Sevilla</td>
-      <td>0.482</td>
-      <td>0.225</td>
-      <td>0.293</td>
+      <td>37.8%</td>
+      <td>29.6%</td>
+      <td>32.6%</td>
       <td>H</td>
+      <td>1.18</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Deportivo de A Coruña</td>
-      <td>Racing de Santander</td>
-      <td>0.462</td>
-      <td>0.237</td>
-      <td>0.301</td>
+      <td>Real Racing Club</td>
+      <td>38.3%</td>
+      <td>26.9%</td>
+      <td>34.9%</td>
       <td>H</td>
+      <td>1.30</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Elche</td>
       <td>Espanyol</td>
-      <td>0.512</td>
-      <td>0.221</td>
-      <td>0.267</td>
-      <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>34</td>
-      <td>Levante</td>
-      <td>Real Madrid</td>
-      <td>0.112</td>
-      <td>0.162</td>
-      <td>0.727</td>
+      <td>29.1%</td>
+      <td>25.4%</td>
+      <td>45.5%</td>
       <td>A</td>
+      <td>1.19</td>
+      <td>1.56</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
-      <td>Málaga</td>
-      <td>Getafe</td>
-      <td>0.478</td>
-      <td>0.227</td>
-      <td>0.294</td>
+      <td>FC Barcelona</td>
+      <td>Osasuna</td>
+      <td>50.2%</td>
+      <td>26.9%</td>
+      <td>22.9%</td>
       <td>H</td>
+      <td>1.42</td>
+      <td>0.86</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>34</td>
+      <td>Levante UD</td>
+      <td>Real Madrid</td>
+      <td>21.8%</td>
+      <td>24.2%</td>
+      <td>54.0%</td>
+      <td>A</td>
+      <td>0.96</td>
+      <td>1.65</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>34</td>
+      <td>Málaga CF</td>
+      <td>Getafe</td>
+      <td>39.8%</td>
+      <td>29.0%</td>
+      <td>31.2%</td>
+      <td>H</td>
+      <td>1.21</td>
+      <td>1.03</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Rayo Vallecano</td>
       <td>Villarreal</td>
-      <td>0.340</td>
-      <td>0.239</td>
-      <td>0.421</td>
-      <td>D</td>
+      <td>35.4%</td>
+      <td>25.1%</td>
+      <td>39.5%</td>
+      <td>A</td>
+      <td>1.37</td>
+      <td>1.48</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Real Betis</td>
       <td>Valencia</td>
-      <td>0.595</td>
-      <td>0.201</td>
-      <td>0.204</td>
+      <td>42.7%</td>
+      <td>30.2%</td>
+      <td>27.0%</td>
       <td>H</td>
+      <td>1.15</td>
+      <td>0.85</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>34</td>
       <td>Real Sociedad</td>
-      <td>Athletic Bilbao</td>
-      <td>0.502</td>
-      <td>0.232</td>
-      <td>0.266</td>
+      <td>Athletic Club</td>
+      <td>39.4%</td>
+      <td>26.7%</td>
+      <td>33.9%</td>
       <td>H</td>
+      <td>1.32</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
-      <td>Athletic Bilbao</td>
-      <td>Málaga</td>
-      <td>0.456</td>
-      <td>0.236</td>
-      <td>0.308</td>
+      <td>Athletic Club</td>
+      <td>Málaga CF</td>
+      <td>39.4%</td>
+      <td>25.8%</td>
+      <td>34.8%</td>
       <td>H</td>
+      <td>1.36</td>
+      <td>1.25</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Deportivo Alavés</td>
-      <td>Levante</td>
-      <td>0.417</td>
-      <td>0.233</td>
-      <td>0.350</td>
-      <td>D</td>
+      <td>Levante UD</td>
+      <td>50.4%</td>
+      <td>26.0%</td>
+      <td>23.7%</td>
+      <td>H</td>
+      <td>1.49</td>
+      <td>0.93</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Getafe</td>
       <td>Elche</td>
-      <td>0.459</td>
-      <td>0.232</td>
-      <td>0.309</td>
+      <td>44.2%</td>
+      <td>26.3%</td>
+      <td>29.5%</td>
       <td>H</td>
+      <td>1.42</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Osasuna</td>
       <td>Real Sociedad</td>
-      <td>0.399</td>
-      <td>0.238</td>
-      <td>0.363</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>35</td>
-      <td>Racing de Santander</td>
-      <td>Sevilla</td>
-      <td>0.471</td>
-      <td>0.225</td>
-      <td>0.304</td>
+      <td>39.7%</td>
+      <td>29.5%</td>
+      <td>30.8%</td>
       <td>H</td>
+      <td>1.15</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Rayo Vallecano</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.481</td>
-      <td>0.230</td>
-      <td>0.289</td>
-      <td>H</td>
+      <td>34.7%</td>
+      <td>27.8%</td>
+      <td>37.5%</td>
+      <td>A</td>
+      <td>1.18</td>
+      <td>1.23</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Real Betis</td>
       <td>Espanyol</td>
-      <td>0.636</td>
-      <td>0.191</td>
-      <td>0.172</td>
+      <td>46.1%</td>
+      <td>27.1%</td>
+      <td>26.8%</td>
       <td>H</td>
+      <td>1.41</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Real Madrid</td>
-      <td>Barcelona</td>
-      <td>0.837</td>
-      <td>0.103</td>
-      <td>0.059</td>
+      <td>FC Barcelona</td>
+      <td>38.2%</td>
+      <td>26.6%</td>
+      <td>35.2%</td>
       <td>H</td>
+      <td>1.29</td>
+      <td>1.24</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>35</td>
+      <td>Real Racing Club</td>
+      <td>Sevilla</td>
+      <td>38.9%</td>
+      <td>25.9%</td>
+      <td>35.2%</td>
+      <td>H</td>
+      <td>1.38</td>
+      <td>1.32</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Valencia</td>
       <td>Atlético Madrid</td>
-      <td>0.225</td>
-      <td>0.218</td>
-      <td>0.557</td>
+      <td>30.7%</td>
+      <td>29.3%</td>
+      <td>40.1%</td>
       <td>A</td>
+      <td>0.99</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>35</td>
       <td>Villarreal</td>
       <td>Celta Vigo</td>
-      <td>0.578</td>
-      <td>0.214</td>
-      <td>0.208</td>
+      <td>39.0%</td>
+      <td>25.9%</td>
+      <td>35.0%</td>
       <td>H</td>
+      <td>1.28</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Atlético Madrid</td>
       <td>Rayo Vallecano</td>
-      <td>0.682</td>
-      <td>0.174</td>
-      <td>0.144</td>
+      <td>51.6%</td>
+      <td>24.5%</td>
+      <td>23.9%</td>
       <td>H</td>
+      <td>1.62</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Deportivo de A Coruña</td>
       <td>Deportivo Alavés</td>
-      <td>0.511</td>
-      <td>0.224</td>
-      <td>0.265</td>
-      <td>H</td>
+      <td>30.7%</td>
+      <td>29.4%</td>
+      <td>39.8%</td>
+      <td>A</td>
+      <td>1.04</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Elche</td>
-      <td>Athletic Bilbao</td>
-      <td>0.448</td>
-      <td>0.239</td>
-      <td>0.312</td>
-      <td>H</td>
+      <td>Athletic Club</td>
+      <td>32.6%</td>
+      <td>24.1%</td>
+      <td>43.4%</td>
+      <td>A</td>
+      <td>1.33</td>
+      <td>1.57</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Espanyol</td>
       <td>Valencia</td>
-      <td>0.420</td>
-      <td>0.234</td>
-      <td>0.345</td>
-      <td>D</td>
+      <td>36.6%</td>
+      <td>29.0%</td>
+      <td>34.4%</td>
+      <td>H</td>
+      <td>1.10</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Getafe</td>
-      <td>0.477</td>
-      <td>0.230</td>
-      <td>0.292</td>
+      <td>38.7%</td>
+      <td>27.7%</td>
+      <td>33.6%</td>
       <td>H</td>
+      <td>1.18</td>
+      <td>1.08</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Celta Vigo</td>
-      <td>0.440</td>
-      <td>0.243</td>
-      <td>0.317</td>
-      <td>H</td>
+      <td>33.5%</td>
+      <td>30.0%</td>
+      <td>36.5%</td>
+      <td>A</td>
+      <td>1.02</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Osasuna</td>
       <td>Real Betis</td>
-      <td>0.317</td>
-      <td>0.238</td>
-      <td>0.445</td>
+      <td>30.8%</td>
+      <td>30.7%</td>
+      <td>38.5%</td>
       <td>A</td>
+      <td>0.96</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Real Madrid</td>
-      <td>Racing de Santander</td>
-      <td>0.834</td>
-      <td>0.106</td>
-      <td>0.059</td>
+      <td>Real Racing Club</td>
+      <td>52.4%</td>
+      <td>23.7%</td>
+      <td>23.9%</td>
       <td>H</td>
+      <td>1.68</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Real Sociedad</td>
-      <td>Barcelona</td>
-      <td>0.508</td>
-      <td>0.222</td>
-      <td>0.270</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>23.9%</td>
+      <td>27.3%</td>
+      <td>48.8%</td>
+      <td>A</td>
+      <td>0.92</td>
+      <td>1.46</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>36</td>
       <td>Sevilla</td>
       <td>Villarreal</td>
-      <td>0.326</td>
-      <td>0.232</td>
-      <td>0.442</td>
-      <td>A</td>
+      <td>40.8%</td>
+      <td>24.6%</td>
+      <td>34.5%</td>
+      <td>H</td>
+      <td>1.57</td>
+      <td>1.43</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Atlético Madrid</td>
-      <td>Athletic Bilbao</td>
-      <td>0.693</td>
-      <td>0.176</td>
-      <td>0.131</td>
+      <td>Athletic Club</td>
+      <td>50.9%</td>
+      <td>24.1%</td>
+      <td>25.0%</td>
       <td>H</td>
-    </tr>
-    <tr>
-      <td>2026</td>
-      <td>37</td>
-      <td>Barcelona</td>
-      <td>Málaga</td>
-      <td>0.459</td>
-      <td>0.225</td>
-      <td>0.316</td>
-      <td>H</td>
+      <td>1.68</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Celta Vigo</td>
       <td>Real Sociedad</td>
-      <td>0.446</td>
-      <td>0.238</td>
-      <td>0.316</td>
+      <td>41.3%</td>
+      <td>29.8%</td>
+      <td>28.8%</td>
       <td>H</td>
+      <td>1.16</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Deportivo Alavés</td>
       <td>Real Madrid</td>
-      <td>0.096</td>
-      <td>0.153</td>
-      <td>0.752</td>
+      <td>32.9%</td>
+      <td>27.5%</td>
+      <td>39.6%</td>
       <td>A</td>
+      <td>1.15</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Deportivo de A Coruña</td>
       <td>Espanyol</td>
-      <td>0.518</td>
-      <td>0.224</td>
-      <td>0.257</td>
+      <td>37.2%</td>
+      <td>27.4%</td>
+      <td>35.4%</td>
       <td>H</td>
+      <td>1.22</td>
+      <td>1.19</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
-      <td>Racing de Santander</td>
-      <td>Levante</td>
-      <td>0.457</td>
-      <td>0.229</td>
-      <td>0.314</td>
+      <td>FC Barcelona</td>
+      <td>Málaga CF</td>
+      <td>55.8%</td>
+      <td>24.4%</td>
+      <td>19.8%</td>
       <td>H</td>
+      <td>1.65</td>
+      <td>0.87</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Rayo Vallecano</td>
       <td>Real Betis</td>
-      <td>0.370</td>
-      <td>0.231</td>
-      <td>0.399</td>
-      <td>D</td>
+      <td>27.9%</td>
+      <td>26.9%</td>
+      <td>45.2%</td>
+      <td>A</td>
+      <td>1.00</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>37</td>
+      <td>Real Racing Club</td>
+      <td>Levante UD</td>
+      <td>45.5%</td>
+      <td>25.4%</td>
+      <td>29.1%</td>
+      <td>H</td>
+      <td>1.47</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Sevilla</td>
       <td>Getafe</td>
-      <td>0.465</td>
-      <td>0.231</td>
-      <td>0.305</td>
+      <td>44.3%</td>
+      <td>27.1%</td>
+      <td>28.5%</td>
       <td>H</td>
+      <td>1.39</td>
+      <td>1.06</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Valencia</td>
       <td>Elche</td>
-      <td>0.457</td>
-      <td>0.229</td>
-      <td>0.314</td>
+      <td>49.1%</td>
+      <td>26.3%</td>
+      <td>24.6%</td>
       <td>H</td>
+      <td>1.43</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>37</td>
       <td>Villarreal</td>
       <td>Osasuna</td>
-      <td>0.625</td>
-      <td>0.200</td>
-      <td>0.176</td>
+      <td>39.5%</td>
+      <td>26.5%</td>
+      <td>34.0%</td>
       <td>H</td>
+      <td>1.32</td>
+      <td>1.22</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
-      <td>Athletic Bilbao</td>
+      <td>Athletic Club</td>
       <td>Rayo Vallecano</td>
-      <td>0.442</td>
-      <td>0.232</td>
-      <td>0.326</td>
+      <td>41.2%</td>
+      <td>25.4%</td>
+      <td>33.4%</td>
       <td>H</td>
+      <td>1.42</td>
+      <td>1.25</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Elche</td>
-      <td>Racing de Santander</td>
-      <td>0.449</td>
-      <td>0.231</td>
-      <td>0.320</td>
-      <td>H</td>
+      <td>Real Racing Club</td>
+      <td>29.3%</td>
+      <td>24.8%</td>
+      <td>46.0%</td>
+      <td>A</td>
+      <td>1.24</td>
+      <td>1.63</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Espanyol</td>
       <td>Deportivo Alavés</td>
-      <td>0.439</td>
-      <td>0.235</td>
-      <td>0.326</td>
-      <td>H</td>
+      <td>33.1%</td>
+      <td>27.2%</td>
+      <td>39.6%</td>
+      <td>A</td>
+      <td>1.14</td>
+      <td>1.28</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Getafe</td>
-      <td>Barcelona</td>
-      <td>0.456</td>
-      <td>0.229</td>
-      <td>0.315</td>
-      <td>H</td>
+      <td>FC Barcelona</td>
+      <td>21.1%</td>
+      <td>26.3%</td>
+      <td>52.6%</td>
+      <td>A</td>
+      <td>0.86</td>
+      <td>1.51</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
-      <td>Levante</td>
+      <td>Levante UD</td>
       <td>Celta Vigo</td>
-      <td>0.447</td>
-      <td>0.235</td>
-      <td>0.318</td>
-      <td>H</td>
+      <td>31.9%</td>
+      <td>29.2%</td>
+      <td>38.8%</td>
+      <td>A</td>
+      <td>1.01</td>
+      <td>1.15</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
-      <td>Málaga</td>
+      <td>Málaga CF</td>
       <td>Sevilla</td>
-      <td>0.464</td>
-      <td>0.229</td>
-      <td>0.307</td>
-      <td>H</td>
+      <td>34.9%</td>
+      <td>26.1%</td>
+      <td>39.0%</td>
+      <td>A</td>
+      <td>1.23</td>
+      <td>1.31</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Osasuna</td>
       <td>Valencia</td>
-      <td>0.456</td>
-      <td>0.235</td>
-      <td>0.308</td>
+      <td>36.0%</td>
+      <td>31.5%</td>
+      <td>32.5%</td>
       <td>H</td>
+      <td>0.97</td>
+      <td>0.92</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Real Betis</td>
       <td>Atlético Madrid</td>
-      <td>0.342</td>
-      <td>0.237</td>
-      <td>0.420</td>
-      <td>D</td>
+      <td>37.1%</td>
+      <td>28.1%</td>
+      <td>34.8%</td>
+      <td>H</td>
+      <td>1.23</td>
+      <td>1.18</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Real Madrid</td>
       <td>Deportivo de A Coruña</td>
-      <td>0.837</td>
-      <td>0.103</td>
-      <td>0.060</td>
+      <td>51.4%</td>
+      <td>25.5%</td>
+      <td>23.1%</td>
       <td>H</td>
+      <td>1.57</td>
+      <td>0.96</td>
     </tr>
     <tr>
       <td>2026</td>
       <td>38</td>
       <td>Real Sociedad</td>
       <td>Villarreal</td>
-      <td>0.362</td>
-      <td>0.236</td>
-      <td>0.402</td>
-      <td>D</td>
+      <td>35.5%</td>
+      <td>25.8%</td>
+      <td>38.7%</td>
+      <td>A</td>
+      <td>1.31</td>
+      <td>1.38</td>
     </tr>
   </tbody>
 </table>
-    </div>
-      <!-- reutilizamos la misma tabla match_table con otro filtro -->
+      </div>
     </div>
 
     <div class="section">
-      <p>Proyecto para La Liga, usando estadísticas de equipos de varias temporadas.</p>
+      <p>
+        La Liga 2026 – Predictions.
+        Modelo basado en estadísticas históricas y simulación
+        Monte Carlo.
+      </p>
     </div>
+
   </div>
 
   <script>
@@ -4153,34 +4807,73 @@
     const teamSelect = document.getElementById('teamSelect');
     const matchTable = document.getElementById('match_table');
 
-    const headerCells = Array.from(matchTable.rows[0].cells);
-    const mdIndex = headerCells.findIndex(c => c.innerText === 'matchday');
-    const homeIndex = headerCells.findIndex(c => c.innerText === 'home_team');
-    const awayIndex = headerCells.findIndex(c => c.innerText === 'away_team');
+    const headerCells = Array.from(
+      matchTable.rows[0].cells
+    );
+
+    const mdIndex = headerCells.findIndex(
+      cell => cell.innerText.trim() === 'matchday'
+    );
+
+    const homeIndex = headerCells.findIndex(
+      cell => cell.innerText.trim() === 'home_team'
+    );
+
+    const awayIndex = headerCells.findIndex(
+      cell => cell.innerText.trim() === 'away_team'
+    );
 
     function applyFilters() {
       const selectedMd = mdSelect.value;
       const selectedTeam = teamSelect.value;
 
-      for (let i = 1; i < matchTable.rows.length; i++) {
+      for (
+        let i = 1;
+        i < matchTable.rows.length;
+        i++
+      ) {
         const row = matchTable.rows[i];
-        const rowMd = row.cells[mdIndex].innerText;
-        const rowHome = row.cells[homeIndex].innerText;
-        const rowAway = row.cells[awayIndex].innerText;
 
-        const matchdayOk = (selectedMd === 'all' || rowMd === selectedMd);
-        const teamOk = (selectedTeam === 'all' || rowHome === selectedTeam || rowAway === selectedTeam);
+        const rowMd = row.cells[mdIndex]
+          .innerText
+          .trim();
 
-        if (matchdayOk && teamOk) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
+        const rowHome = row.cells[homeIndex]
+          .innerText
+          .trim();
+
+        const rowAway = row.cells[awayIndex]
+          .innerText
+          .trim();
+
+        const matchdayOk = (
+          selectedMd === 'all'
+          || rowMd === selectedMd
+        );
+
+        const teamOk = (
+          selectedTeam === 'all'
+          || rowHome === selectedTeam
+          || rowAway === selectedTeam
+        );
+
+        row.style.display = (
+          matchdayOk && teamOk
+            ? ''
+            : 'none'
+        );
       }
     }
 
-    mdSelect.addEventListener('change', applyFilters);
-    teamSelect.addEventListener('change', applyFilters);
+    mdSelect.addEventListener(
+      'change',
+      applyFilters
+    );
+
+    teamSelect.addEventListener(
+      'change',
+      applyFilters
+    );
   </script>
 </body>
 </html>
